@@ -55,36 +55,38 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-left: 30px;
         }
 
-        /* Main Hero Split Layout */
+        /* Centered Hero Layout */
         main {
             flex: 1;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            padding: 60px 4%;
-            gap: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            max-width: 1600px;
+            text-align: center;
+            padding: 60px 4%;
+            max-width: 1000px;
             width: 100%;
             margin: 0 auto;
         }
 
-        /* Left Side Content */
-        .hero-left {
+        /* Wrapper to keep geometric circles positioned correctly relative to the centered text */
+        .hero-text-wrapper {
             position: relative;
+            display: inline-block;
+            margin-bottom: 50px;
         }
 
-        /* Geometric Accents replicating the image */
+        /* Geometric Accents */
         .circle-solid {
             position: absolute;
             width: 140px;
             height: 140px;
             background-color: var(--accent);
             border-radius: 50%;
-            top: -40px;
-            left: -20px;
+            top: -30px;
+            left: -40px;
             z-index: 1;
         }
 
@@ -94,99 +96,99 @@
             height: 160px;
             border: 2px solid var(--accent);
             border-radius: 50%;
-            bottom: -30px;
-            right: 15%;
+            bottom: -40px;
+            right: -40px;
             z-index: 1;
         }
 
         h1 {
-            font-size: clamp(3.5rem, 7vw, 6.5rem);
+            font-size: clamp(4rem, 10vw, 8rem);
             line-height: 0.85;
             font-weight: 800;
-            text-transform: uppercase;
             letter-spacing: -0.04em;
             position: relative;
             z-index: 2;
-            margin-bottom: 40px;
         }
 
-        /* Services Tagline Grid at Bottom Left */
+        /* Style to force lowercase on 'stack' and uppercase on 'DIGITAL' */
+        .lowercase {
+            text-transform: lowercase;
+            display: block;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+            display: block;
+        }
+
+        /* Pitch & Contact Block */
+        .intro-block {
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+        }
+
+        .intro-text {
+            font-size: 1.25rem;
+            line-height: 1.5;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 2px;
+            transition: color 0.2s;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        /* Services Tagline Grid at Bottom */
         .services-footer {
             border-top: 1px solid var(--text);
-            padding-top: 20px;
+            padding-top: 25px;
             display: flex;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 30px;
+            width: 100%;
+            max-width: 800px;
         }
 
         .services-footer span {
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
 
-        /* Right Side Frame */
-        .hero-right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .image-frame {
-            border: 1px solid var(--text);
-            padding: 40px;
-            width: 100%;
-            max-width: 550px;
-            aspect-ratio: 1.3 / 1;
-            display: flex;
-            background-color: var(--bg);
-        }
-
-        /* Clean placeholder for headshot/graphic */
-        .image-placeholder {
-            width: 100%;
-            height: 100%;
-            background-color: #e5e5e3;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 30px;
-            text-align: center;
-            border: 1px dashed #b5b5b3;
-        }
-
-        .image-placeholder p {
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .image-placeholder a {
-            color: var(--text);
-            font-weight: 700;
-            font-size: 0.9rem;
-        }
-
         /* Responsive scaling for mobile devices */
-        @media (max-width: 900px) {
-            main {
-                grid-template-columns: 1fr;
-                padding: 40px 4%;
-            }
+        @media (max-width: 768px) {
             h1 {
-                font-size: 4rem;
-            }
-            header nav {
-                display: none; /* Simplifies mobile view */
+                font-size: 5rem;
             }
             .circle-solid {
                 width: 100px;
                 height: 100px;
+                top: -20px;
+                left: -20px;
             }
             .circle-outline {
                 width: 110px;
                 height: 110px;
+                bottom: -20px;
+                right: -20px;
+            }
+            .services-footer {
+                gap: 15px;
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -194,32 +196,33 @@
 <body>
 
     <header>
-        <div class="logo">stack<span>Digital</span></div>
+        <div class="logo">stack<span>digital</span></div>
         <nav>
             <a href="mailto:hello@stackdigital.ie">Contact</a>
         </nav>
     </header>
 
     <main>
-        <div class="hero-left">
+        <div class="hero-text-wrapper">
             <div class="circle-solid"></div>
-            <h1>stack<br>Digital</h1>
+            <h1>
+                <span class="lowercase">stack</span>
+                <span class="uppercase">digital</span>
+            </h1>
             <div class="circle-outline"></div>
-            
-            <div class="services-footer">
-                <span>Digital Consultancy</span>
-                <span>Performance Marketing</span>
-                <span>SME Growth Strategy</span>
-            </div>
         </div>
 
-        <div class="hero-right">
-            <div class="image-frame">
-                <div class="image-placeholder">
-                    <p>Building high-performance digital frameworks that scale your sales.</p>
-                    <a href="mailto:hello@stackdigital.ie">hello@stackdigital.ie</a>
-                </div>
-            </div>
+        <div class="intro-block">
+            <p class="intro-text">
+                Building high-performance digital frameworks that scale your sales. No fluff, just commercial growth for established SMEs.
+            </p>
+            <a href="mailto:hello@stackdigital.ie" class="contact-link">hello@stackdigital.ie</a>
+        </div>
+
+        <div class="services-footer">
+            <span>E-Commerce Optimisation</span>
+            <span>Performance Marketing</span>
+            <span>SME Growth Strategy</span>
         </div>
     </main>
 

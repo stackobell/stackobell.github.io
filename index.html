@@ -36,6 +36,9 @@
             grid-template-columns: auto 1fr auto;
             align-items: center;
             gap: 20px;
+            position: relative;
+            background-color: var(--bg);
+            z-index: 100;
         }
 
         .logo {
@@ -49,14 +52,14 @@
             font-weight: 300;
         }
 
-        /* Centered Nav Links */
+        /* Desktop Nav Links */
         .nav-center {
             display: flex;
             justify-content: center;
             gap: 30px;
         }
 
-        .nav-center a, .nav-right a {
+        .nav-center a, .nav-right a, .mobile-menu a {
             color: var(--text);
             text-decoration: none;
             font-size: 0.85rem;
@@ -68,7 +71,7 @@
             transition: color 0.2s;
         }
 
-        .nav-center a::after {
+        .nav-center a::after, .mobile-menu a::after {
             content: '';
             position: absolute;
             width: 100%;
@@ -81,17 +84,77 @@
             transition: transform 0.25s ease-out;
         }
 
-        .nav-center a:hover {
+        .nav-center a:hover, .mobile-menu a:hover {
             color: var(--accent);
         }
 
-        .nav-center a:hover::after {
+        .nav-center a:hover::after, .mobile-menu a:hover::after {
             transform: scaleX(1);
         }
 
         .nav-right {
             display: flex;
             justify-content: flex-end;
+        }
+
+        /* Mobile Hamburger Icon (Hidden on Desktop) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text);
+            transition: all 0.3s ease-in-out;
+            transform-origin: center;
+        }
+
+        /* Hamburger animation to 'X' when open */
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        /* Mobile Slide-down Menu */
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--text);
+            padding: 30px 4%;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-size: 1rem;
+            padding-bottom: 6px;
         }
 
         /* Left-Aligned Main Layout */
@@ -186,7 +249,7 @@
             color: var(--accent);
         }
 
-        /* Brands/Clients Section - Moved Up & Full Width */
+        /* Brands/Clients Section - Spanning full width under intro */
         .brands-section {
             width: 100%;
             border-top: 1px solid var(--text);
@@ -232,41 +295,55 @@
             mix-blend-mode: multiply; /* Blends white background seamlessly */
         }
 
-        /* Responsive scaling for mobile devices */
+        /* Responsive Breakpoint for Mobile Devices */
         @media (max-width: 900px) {
             header {
-                grid-template-columns: 1fr;
-                gap: 15px;
-                text-align: center;
+                display: flex;
+                justify-content: space-between;
+                padding: 18px 5%;
             }
-            .nav-center {
-                flex-direction: column;
-                gap: 10px;
+
+            .nav-center, .nav-right {
+                display: none; /* Hide standard navs on mobile */
             }
-            .nav-right {
-                justify-content: center;
+
+            .hamburger {
+                display: flex; /* Show hamburger button */
             }
+
+            main {
+                padding: 40px 5%;
+            }
+
             h1 {
-                font-size: 5rem;
+                font-size: 4.5rem;
             }
+
             .circle-solid {
                 width: 100px;
                 height: 100px;
                 top: -10px;
                 left: -20px;
             }
+
             .circle-outline {
                 width: 110px;
                 height: 110px;
                 bottom: -15px;
                 right: -10px;
             }
+
             .brands-grid {
-                gap: 25px;
+                gap: 20px;
                 justify-content: flex-start;
             }
+
             .brand-logo-container {
-                height: 40px;
+                height: 38px;
+            }
+
+            .brand-logo-container img {
+                max-width: 120px;
             }
         }
     </style>
@@ -275,14 +352,32 @@
 
     <header>
         <div class="logo">stack<span>digital</span></div>
+        
+        <!-- Desktop Nav Links -->
         <nav class="nav-center">
             <a href="ecommerce.html">E-Commerce Optimisation</a>
             <a href="marketing.html">Performance Marketing</a>
             <a href="strategy.html">SME Growth Strategy</a>
         </nav>
+        
         <nav class="nav-right">
             <a href="mailto:hello@stackdigital.ie">Contact</a>
         </nav>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <!-- Mobile Dropdown Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="ecommerce.html">E-Commerce Optimisation</a>
+            <a href="marketing.html">Performance Marketing</a>
+            <a href="strategy.html">SME Growth Strategy</a>
+            <a href="mailto:hello@stackdigital.ie">Contact</a>
+        </div>
     </header>
 
     <main>
@@ -302,7 +397,7 @@
             <a href="mailto:hello@stackdigital.ie" class="contact-link">hello@stackdigital.ie</a>
         </div>
 
-        <!-- Brands I've Helped Section - Spanning full width under intro -->
+        <!-- Brands I've Helped Section -->
         <div class="brands-section">
             <div class="brands-title">Brands I've helped</div>
             <div class="brands-grid">
@@ -334,6 +429,17 @@
             </div>
         </div>
     </main>
+
+    <!-- Simple JavaScript for Mobile Menu Toggle -->
+    <script>
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+    </script>
 
 </body>
 </html>

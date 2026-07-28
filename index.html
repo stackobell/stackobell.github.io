@@ -32,9 +32,10 @@
             width: 100%;
             border-bottom: 1px solid var(--text);
             padding: 20px 4%;
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: center;
+            gap: 20px;
         }
 
         .logo {
@@ -48,16 +49,52 @@
             font-weight: 300;
         }
 
-        nav a {
+        /* Centered Nav Links */
+        .nav-center {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-center a, .nav-right a {
             color: var(--text);
             text-decoration: none;
             font-size: 0.85rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.2s;
         }
 
-        /* Left-Aligned Layout */
+        .nav-center a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transform-origin: bottom left;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-center a:hover {
+            color: var(--accent);
+        }
+
+        .nav-center a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Left-Aligned Main Layout */
         main {
             flex: 1;
             display: flex;
@@ -71,7 +108,7 @@
             margin: 0 auto;
         }
 
-        /* Wrapper to keep geometric circles positioned correctly relative to the text */
+        /* Wrapper to keep geometric circles positioned correctly relative to text */
         .hero-text-wrapper {
             position: relative;
             display: inline-block;
@@ -149,56 +186,12 @@
             color: var(--accent);
         }
 
-        /* Interactive Services Navigation Grid */
-        .services-footer {
-            border-top: 1px solid var(--text);
-            padding-top: 25px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            width: 100%;
-            margin-bottom: 60px;
-        }
-
-        .services-footer a {
-            font-size: 0.85rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--text);
-            text-decoration: none;
-            position: relative;
-            padding-bottom: 4px;
-            transition: color 0.2s;
-        }
-
-        .services-footer a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--accent);
-            transform-origin: bottom left;
-            transition: transform 0.25s ease-out;
-        }
-
-        .services-footer a:hover {
-            color: var(--accent);
-        }
-
-        .services-footer a:hover::after {
-            transform: scaleX(1);
-        }
-
-        /* Brands/Clients Section */
+        /* Brands/Clients Section - Moved Up & Full Width */
         .brands-section {
             width: 100%;
-            border-top: 1px solid #e0e0e0;
+            border-top: 1px solid var(--text);
             padding-top: 30px;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         .brands-title {
@@ -207,20 +200,23 @@
             letter-spacing: 0.1em;
             color: var(--muted);
             font-weight: 600;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
 
         .brands-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 40px;
+            justify-content: space-between;
             align-items: center;
+            gap: 30px;
+            width: 100%;
         }
 
         .brand-logo-container {
-            height: 40px;
+            height: 55px; /* Increased height to make logos larger */
             display: flex;
             align-items: center;
+            justify-content: center;
             transition: transform 0.2s ease-in-out;
         }
 
@@ -230,14 +226,26 @@
 
         .brand-logo-container img {
             height: 100%;
-            max-width: 140px;
+            max-width: 170px; /* Increased max width for fuller screen usage */
             width: auto;
             object-fit: contain;
-            mix-blend-mode: multiply; /* Blends white background into off-white site background */
+            mix-blend-mode: multiply; /* Blends white background seamlessly */
         }
 
         /* Responsive scaling for mobile devices */
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
+            header {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                text-align: center;
+            }
+            .nav-center {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .nav-right {
+                justify-content: center;
+            }
             h1 {
                 font-size: 5rem;
             }
@@ -253,14 +261,12 @@
                 bottom: -15px;
                 right: -10px;
             }
-            .services-footer {
-                gap: 20px;
-                flex-direction: column;
-            }
             .brands-grid {
                 gap: 25px;
-                flex-direction: row;
                 justify-content: flex-start;
+            }
+            .brand-logo-container {
+                height: 40px;
             }
         }
     </style>
@@ -269,7 +275,12 @@
 
     <header>
         <div class="logo">stack<span>digital</span></div>
-        <nav>
+        <nav class="nav-center">
+            <a href="ecommerce.html">E-Commerce Optimisation</a>
+            <a href="marketing.html">Performance Marketing</a>
+            <a href="strategy.html">SME Growth Strategy</a>
+        </nav>
+        <nav class="nav-right">
             <a href="mailto:hello@stackdigital.ie">Contact</a>
         </nav>
     </header>
@@ -291,14 +302,7 @@
             <a href="mailto:hello@stackdigital.ie" class="contact-link">hello@stackdigital.ie</a>
         </div>
 
-        <!-- Clickable Services Navigation -->
-        <div class="services-footer">
-            <a href="ecommerce.html">E-Commerce Optimisation</a>
-            <a href="marketing.html">Performance Marketing</a>
-            <a href="strategy.html">SME Growth Strategy</a>
-        </div>
-
-        <!-- Brands I've Helped Section -->
+        <!-- Brands I've Helped Section - Spanning full width under intro -->
         <div class="brands-section">
             <div class="brands-title">Brands I've helped</div>
             <div class="brands-grid">

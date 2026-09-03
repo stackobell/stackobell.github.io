@@ -45,6 +45,8 @@
             font-weight: 800;
             font-size: 1.5rem;
             letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--text);
         }
 
         .logo span {
@@ -226,22 +228,26 @@
             font-size: 1.25rem;
             line-height: 1.5;
             font-weight: 500;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
-        .contact-link {
+        /* CTA Consultation Button */
+        .cta-button {
             display: inline-block;
+            background-color: var(--accent);
             color: var(--text);
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 2px;
-            transition: color 0.2s;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px 32px;
+            transition: transform 0.2s, opacity 0.2s;
         }
 
-        .contact-link:hover {
-            color: var(--accent);
+        .cta-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
         }
 
         /* Brands Section */
@@ -329,7 +335,6 @@
                 right: -10px;
             }
 
-            /* 3 logos per row across 2 rows */
             .brands-grid {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
@@ -347,13 +352,18 @@
                 max-width: 100%;
                 max-height: 48px;
             }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="logo">stack<span>digital</span></div>
+        <a href="index.html" class="logo">stack<span>digital</span></a>
         
         <nav class="nav-center">
             <a href="ecommerce.html">E-Commerce Optimisation</a>
@@ -362,7 +372,7 @@
         </nav>
         
         <nav class="nav-right">
-            <a href="mailto:hello@stackdigital.ie">Contact</a>
+            <a href="contact.html">Contact</a>
         </nav>
 
         <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
@@ -375,7 +385,7 @@
             <a href="ecommerce.html">E-Commerce Optimisation</a>
             <a href="marketing.html">Performance Marketing</a>
             <a href="strategy.html">SME Growth Strategy</a>
-            <a href="mailto:hello@stackdigital.ie">Contact</a>
+            <a href="contact.html">Contact</a>
         </div>
     </header>
 
@@ -393,7 +403,7 @@
             <p class="intro-text">
                 Building high-performance digital frameworks that scale your business on and off-line. No waffle, just commercial growth for SMEs that want to grow.
             </p>
-            <a href="mailto:hello@stackdigital.ie" class="contact-link">hello@stackdigital.ie</a>
+            <a href="contact.html" class="cta-button">Free Consultation</a>
         </div>
 
         <div class="brands-section">

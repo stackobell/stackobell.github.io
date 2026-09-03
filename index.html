@@ -6,9 +6,9 @@
     <title>Stack Digital | Commercial Growth Consultant</title>
     <style>
         :root {
-            --bg: #f4f4f2; /* Off-white premium editorial background */
-            --text: #0a0a0a; /* Stark black */
-            --accent: #f2a900; /* Vibrant orange/yellow accent */
+            --bg: #f4f4f2;
+            --text: #0a0a0a;
+            --accent: #f2a900;
             --muted: #555555;
         }
 
@@ -97,7 +97,7 @@
             justify-content: flex-end;
         }
 
-        /* Mobile Hamburger Icon (Hidden on Desktop) */
+        /* Mobile Hamburger Icon */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -119,7 +119,6 @@
             transform-origin: center;
         }
 
-        /* Hamburger animation to 'X' when open */
         .hamburger.active span:nth-child(1) {
             transform: translateY(8px) rotate(45deg);
         }
@@ -132,7 +131,7 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        /* Mobile Slide-down Menu */
+        /* Mobile Menu */
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -171,14 +170,12 @@
             margin: 0 auto;
         }
 
-        /* Wrapper to keep geometric circles positioned correctly relative to text */
         .hero-text-wrapper {
             position: relative;
             display: inline-block;
             margin-bottom: 30px;
         }
 
-        /* Geometric Accents */
         .circle-solid {
             position: absolute;
             width: 140px;
@@ -210,7 +207,6 @@
             z-index: 2;
         }
 
-        /* Force lowercase on 'stack' and uppercase on 'DIGITAL' */
         .lowercase {
             text-transform: lowercase;
             display: block;
@@ -221,7 +217,6 @@
             display: block;
         }
 
-        /* Pitch & Contact Block */
         .intro-block {
             max-width: 650px;
             margin-bottom: 50px;
@@ -249,7 +244,7 @@
             color: var(--accent);
         }
 
-        /* Brands/Clients Section - Spanning full width under intro */
+        /* Brands Section */
         .brands-section {
             width: 100%;
             border-top: 1px solid var(--text);
@@ -276,7 +271,7 @@
         }
 
         .brand-logo-container {
-            height: 55px; /* Increased height to make logos larger */
+            height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -284,18 +279,19 @@
         }
 
         .brand-logo-container:hover {
-            transform: translateY(-2px) rotate(1deg); /* Subtle hover tilt/lift */
+            transform: translateY(-2px) rotate(1deg);
         }
 
         .brand-logo-container img {
             height: 100%;
-            max-width: 170px; /* Increased max width for fuller screen usage */
+            max-height: 70px;
+            max-width: 190px;
             width: auto;
             object-fit: contain;
-            mix-blend-mode: multiply; /* Blends white background seamlessly */
+            mix-blend-mode: multiply;
         }
 
-        /* Responsive Breakpoint for Mobile Devices */
+        /* Mobile Breakpoint */
         @media (max-width: 900px) {
             header {
                 display: flex;
@@ -304,11 +300,11 @@
             }
 
             .nav-center, .nav-right {
-                display: none; /* Hide standard navs on mobile */
+                display: none;
             }
 
             .hamburger {
-                display: flex; /* Show hamburger button */
+                display: flex;
             }
 
             main {
@@ -333,17 +329,23 @@
                 right: -10px;
             }
 
+            /* 3 logos per row across 2 rows */
             .brands-grid {
-                gap: 20px;
-                justify-content: flex-start;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 24px 16px;
+                width: 100%;
+                justify-items: center;
             }
 
             .brand-logo-container {
-                height: 38px;
+                height: 48px;
+                width: 100%;
             }
 
             .brand-logo-container img {
-                max-width: 120px;
+                max-width: 100%;
+                max-height: 48px;
             }
         }
     </style>
@@ -353,7 +355,6 @@
     <header>
         <div class="logo">stack<span>digital</span></div>
         
-        <!-- Desktop Nav Links -->
         <nav class="nav-center">
             <a href="ecommerce.html">E-Commerce Optimisation</a>
             <a href="marketing.html">Performance Marketing</a>
@@ -364,14 +365,12 @@
             <a href="mailto:hello@stackdigital.ie">Contact</a>
         </nav>
 
-        <!-- Mobile Hamburger Button -->
         <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
-        <!-- Mobile Dropdown Menu -->
         <div class="mobile-menu" id="mobile-menu">
             <a href="ecommerce.html">E-Commerce Optimisation</a>
             <a href="marketing.html">Performance Marketing</a>
@@ -392,12 +391,11 @@
 
         <div class="intro-block">
             <p class="intro-text">
-                Building high-performance digital frameworks that scale your business on and off-line. No waffle, just commercial growth for ambitious SMEs.
+                Building high-performance digital frameworks that scale your business on and off-line. No waffle, just commercial growth for SMEs that want to grow.
             </p>
             <a href="mailto:hello@stackdigital.ie" class="contact-link">hello@stackdigital.ie</a>
         </div>
 
-        <!-- Brands I've Helped Section -->
         <div class="brands-section">
             <div class="brands-title">Brands I've helped</div>
             <div class="brands-grid">
@@ -430,7 +428,6 @@
         </div>
     </main>
 
-    <!-- Simple JavaScript for Mobile Menu Toggle -->
     <script>
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu');

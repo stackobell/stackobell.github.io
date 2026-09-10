@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SME Growth Strategy | Stack Digital</title>
+    <style>
+        :root {
+            --bg: #f4f4f2;
+            --text: #0a0a0a;
+            --accent: #f2a900;
+            --muted: #555555;
+            --border: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            width: 100%;
+            border-bottom: 1px solid var(--text);
+            padding: 20px 4%;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            background-color: var(--bg);
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .logo span {
+            color: var(--muted);
+            font-weight: 300;
+        }
+
+        .nav-center {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-center a, .nav-right a, .mobile-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.2s;
+        }
+
+        .nav-center a.active {
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .nav-center a::after, .mobile-menu a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transform-origin: bottom left;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-center a:hover, .mobile-menu a:hover {
+            color: var(--accent);
+        }
+
+        .nav-center a:hover::after, .mobile-menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Mobile Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--text);
+            padding: 30px 4%;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        /* Page Layout */
+        main {
+            flex: 1;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 60px 4% 80px 4%;
+        }
+
+        .category-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .lead {
+            font-size: 1.35rem;
+            line-height: 1.5;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            border-top: 1px solid var(--text);
+            padding: 45px 0;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .section-heading {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .body-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #222;
+        }
+
+        .body-text p + p {
+            margin-top: 16px;
+        }
+
+        /* Accordion FAQ Styling */
+        .faq-section {
+            border-top: 1px solid var(--text);
+            padding: 45px 0 60px 0;
+        }
+
+        .accordion {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .accordion-item:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .accordion-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            padding-right: 20px;
+            transition: color 0.2s;
+        }
+
+        .accordion-item:hover .accordion-title {
+            color: var(--accent);
+        }
+
+        .accordion-icon {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--text);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+            color: var(--accent);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out, padding 0.35s ease;
+            padding: 0;
+        }
+
+        .accordion-body p {
+            font-size: 1.02rem;
+            line-height: 1.65;
+            color: var(--muted);
+            padding-bottom: 24px;
+        }
+
+        /* Bottom Action Bar */
+        .cta-box {
+            border-top: 1px solid var(--text);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cta-box h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--muted);
+            max-width: 550px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px 32px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                padding: 18px 5%;
+            }
+
+            .nav-center, .nav-right {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            main {
+                padding: 40px 5%;
+            }
+
+            .accordion-title {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">stack<span>digital</span></a>
+        
+        <nav class="nav-center">
+            <a href="ecommerce.html">E-Commerce Optimisation</a>
+            <a href="marketing.html">Performance Marketing</a>
+            <a href="strategy.html" class="active">SME Growth Strategy</a>
+        </nav>
+        
+        <nav class="nav-right">
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="ecommerce.html">E-Commerce Optimisation</a>
+            <a href="marketing.html">Performance Marketing</a>
+            <a href="strategy.html">SME Growth Strategy</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="category-tag">Service Area 03</div>
+        <h1>SME Growth Strategy</h1>
+        <p class="lead">
+            Bridging the gap between digital activity and commercial performance. We align your online channels, operational workflows, and tech stack to drive sustainable top-line expansion and protect margin.
+        </p>
+
+        <!-- Section 1: The Challenge -->
+        <section class="content-section">
+            <div class="section-title">The Strategic Friction</div>
+            <h2 class="section-heading">Disconnected digital tactics don't equal a commercial strategy</h2>
+            <div class="body-text">
+                <p>
+                    Most SMEs don’t suffer from a shortage of ideas or tools; they suffer from fragmentation. Marketing runs ads in one corner, stock is managed manually across physical stores in another, and digital platforms operate as isolated silos disconnected from the core balance sheet.
+                </p>
+                <p>
+                    Adding more software subscriptions or running reactive seasonal promotions won't break a revenue plateau. Sustainable scaling requires an overarching commercial blueprint: unifying online and physical sales channels, streamlining stock visibility, removing friction from customer journeys, and directing capital only towards initiatives that demonstrably move gross profit.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Commercial Expertise -->
+        <section class="content-section">
+            <div class="section-title">Commercial Expertise</div>
+            <h2 class="section-heading">Pragmatic advisory built on real operational experience</h2>
+            <div class="body-text">
+                <p>
+                    I advise businesses from the perspective of an experienced commercial operator, not an outside consultant delivering theoretical PowerPoint slides.
+                </p>
+                <p>
+                    Having guided omni-channel retail enterprises, motor dealer networks, and heritage brands through large-scale digital transformations and systems modernisations, I understand how commercial decisions impact staff, stock, and cash flow. Whether evaluating enterprise platform migrations, auditing agency contracts, or structuring lean internal workflows, my focus remains fixed on commercial clarity and execution.
+                </p>
+                <p>
+                    No academic jargon or endless discovery workshops—just straightforward, actionable guidance designed to build resilience and accelerate commercial scale.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: FAQ Accordion -->
+        <section class="faq-section">
+            <div class="section-title">Practical Answers</div>
+            <h2 class="section-heading">Common strategic questions from business leaders</h2>
+
+            <div class="accordion">
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">01. We've hit a revenue plateau. How do we figure out what to unlock next?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            When a business hits a ceiling, the solution is rarely "do more of the same". We begin by breaking down your unit economics across channels: product margin distribution, customer acquisition costs, and repeat purchase behaviour. Usually, the bottleneck is structural—such as poor stock availability on high-margin lines, disjointed checkout experiences, or over-reliance on a single acquisition channel. We identify the primary constraint and build an execution plan to solve it.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">02. How do we bridge our physical retail stores with our online business?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            True omni-channel isn't just having a website and a physical shop; it's creating operational harmony between them. This means accurate real-time inventory visibility across all locations, frictionless click-and-collect, unified customer data, and ensuring physical store teams view digital as an asset rather than internal competition. We build frameworks that turn multi-location physical footprints into a definitive competitive advantage over pure-play online retailers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">03. We are working with an agency, but how do I know if we’re getting value?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            Agency retainers frequently outlast their initial utility. If you receive monthly reports loaded with vanity metrics like impressions and click-through rates, but struggle to see the net financial gain on your bank statement, the relationship needs commercial auditing. I act as an independent commercial advisor to review agency deliverables, evaluate technical proposals, and ensure external partners are held accountable to true commercial KPIs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">04. Should we hire an in-house team or outsource to agencies and contractors?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            It depends on your current scale and the core competencies your business needs to own. Typically, tactical execution that requires specialised platform expertise (like advanced technical SEO or deep media buying) can be effectively outsourced or contracted, while brand voice, customer relationships, and commercial proposition should be kept close to home. We help you structure a lean, agile operating model that delivers output without unnecessary overhead.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">05. What does working together on a strategic advisory basis look like?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            We begin with a focused commercial audit of your digital ecosystem, tech stack, and customer journey to identify immediate quick wins and structural bottlenecks. From there, engagements typically take the form of ongoing fractional commercial direction—providing senior guidance on platform investments, vendor negotiations, data analytics, and quarterly growth execution without the expense of a full-time executive hire.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Bottom Action CTA -->
+        <div class="cta-box">
+            <div>
+                <h3>Define your commercial roadmap</h3>
+                <p>Book a consultation. Let’s assess your existing operating model, identify untapped margin, and build a framework to scale your business.</p>
+            </div>
+            <a href="contact.html" class="cta-button">Free Consultation</a>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Accordion functionality
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const body = item.querySelector('.accordion-body');
+
+            header.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+
+                // Close all other open items
+                accordionItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.accordion-body').style.maxHeight = null;
+                });
+
+                // Toggle selected item
+                if (!isOpen) {
+                    item.classList.add('active');
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

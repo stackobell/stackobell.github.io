@@ -166,7 +166,7 @@
             justify-content: center;
             align-items: flex-start;
             text-align: left;
-            padding: 60px 4%;
+            padding: 50px 4% 30px 4%;
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
@@ -175,7 +175,7 @@
         .hero-text-wrapper {
             position: relative;
             display: inline-block;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .circle-solid {
@@ -221,21 +221,19 @@
 
         .intro-block {
             max-width: 740px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
-        .intro-text {
+        .intro-text, .sub-intro-text {
             font-size: 1.25rem;
             line-height: 1.55;
             font-weight: 500;
-            margin-bottom: 16px;
+            color: var(--text);
+            margin-bottom: 14px;
         }
 
         .sub-intro-text {
-            font-size: 1.1rem;
-            line-height: 1.5;
-            color: var(--muted);
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
 
         /* CTA Consultation Button */
@@ -261,8 +259,8 @@
         .brands-section {
             width: 100%;
             border-top: 1px solid var(--text);
-            padding-top: 30px;
-            margin-top: 10px;
+            padding-top: 20px;
+            margin-top: 5px;
         }
 
         .brands-title {
@@ -271,7 +269,7 @@
             letter-spacing: 0.1em;
             color: var(--muted);
             font-weight: 600;
-            margin-bottom: 30px;
+            margin-bottom: 24px;
         }
 
         .brands-grid {
@@ -279,7 +277,7 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 30px;
+            gap: 25px;
             width: 100%;
         }
 
@@ -309,7 +307,7 @@
             header {
                 display: flex;
                 justify-content: space-between;
-                padding: 18px 5%;
+                padding: 16px 5%;
             }
 
             .nav-center, .nav-right {
@@ -321,48 +319,76 @@
             }
 
             main {
-                padding: 40px 5%;
+                padding: 24px 5% 20px 5%;
             }
 
             h1 {
-                font-size: 4.5rem;
+                font-size: 4rem;
+            }
+
+            .hero-text-wrapper {
+                margin-bottom: 20px;
             }
 
             .circle-solid {
-                width: 100px;
-                height: 100px;
+                width: 90px;
+                height: 90px;
                 top: -10px;
-                left: -20px;
+                left: -15px;
             }
 
             .circle-outline {
-                width: 110px;
-                height: 110px;
+                width: 100px;
+                height: 100px;
                 bottom: -15px;
                 right: -10px;
             }
 
-            .brands-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 24px 16px;
-                width: 100%;
-                justify-items: center;
+            .intro-block {
+                margin-bottom: 20px;
             }
 
-            .brand-logo-container {
-                height: 48px;
-                width: 100%;
+            .intro-text, .sub-intro-text {
+                font-size: 1.1rem;
+                line-height: 1.45;
+                margin-bottom: 12px;
             }
 
-            .brand-logo-container img {
-                max-width: 100%;
-                max-height: 48px;
+            .sub-intro-text {
+                margin-bottom: 18px;
             }
 
             .cta-button {
                 width: 100%;
                 text-align: center;
+                padding: 14px 20px;
+            }
+
+            .brands-section {
+                padding-top: 18px;
+                margin-top: 0;
+            }
+
+            .brands-title {
+                margin-bottom: 16px;
+            }
+
+            .brands-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px 12px;
+                width: 100%;
+                justify-items: center;
+            }
+
+            .brand-logo-container {
+                height: 42px;
+                width: 100%;
+            }
+
+            .brand-logo-container img {
+                max-width: 100%;
+                max-height: 42px;
             }
         }
     </style>
@@ -411,7 +437,7 @@
                 Building high-performance digital marketing frameworks that scale your business on and off-line. If you're an ambitious SME looking for a no-waffle approach to paid ads, conversion audits, and commercial reporting, you're in the right place.
             </p>
             <p class="sub-intro-text">
-                Whether it's a one-off project or a long-term partnership, I can tailor a solution to support your growth.
+                Whether it's a one-off project, or a long-term partnership, I can tailor a solution to support your growth.
             </p>
             <a href="contact.html" class="cta-button">Free Consultation</a>
         </div>

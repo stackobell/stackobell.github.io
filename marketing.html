@@ -1,1 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performance Marketing | Stack Digital</title>
+    <style>
+        :root {
+            --bg: #f4f4f2;
+            --text: #0a0a0a;
+            --accent: #f2a900;
+            --muted: #555555;
+            --border: #e0e0e0;
+        }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            width: 100%;
+            border-bottom: 1px solid var(--text);
+            padding: 20px 4%;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            background-color: var(--bg);
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .logo span {
+            color: var(--muted);
+            font-weight: 300;
+        }
+
+        .nav-center {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-center a, .nav-right a, .mobile-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.2s;
+        }
+
+        .nav-center a.active {
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .nav-center a::after, .mobile-menu a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transform-origin: bottom left;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-center a:hover, .mobile-menu a:hover {
+            color: var(--accent);
+        }
+
+        .nav-center a:hover::after, .mobile-menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Mobile Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--text);
+            padding: 30px 4%;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        /* Page Layout */
+        main {
+            flex: 1;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 60px 4% 80px 4%;
+        }
+
+        .category-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .lead {
+            font-size: 1.35rem;
+            line-height: 1.5;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+
+        /* Content Sections */
+        .content-section {
+            border-top: 1px solid var(--text);
+            padding: 45px 0;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .section-heading {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .body-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #222;
+        }
+
+        .body-text p + p {
+            margin-top: 16px;
+        }
+
+        /* Accordion FAQ Styling */
+        .faq-section {
+            border-top: 1px solid var(--text);
+            padding: 45px 0 60px 0;
+        }
+
+        .accordion {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .accordion-item:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            outline: none;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .accordion-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            padding-right: 20px;
+            transition: color 0.2s;
+        }
+
+        .accordion-item:hover .accordion-title {
+            color: var(--accent);
+        }
+
+        .accordion-icon {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--text);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+            color: var(--accent);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out, padding 0.35s ease;
+            padding: 0;
+        }
+
+        .accordion-body p {
+            font-size: 1.02rem;
+            line-height: 1.65;
+            color: var(--muted);
+            padding-bottom: 24px;
+        }
+
+        /* Bottom Action Bar */
+        .cta-box {
+            border-top: 1px solid var(--text);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cta-box h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--muted);
+            max-width: 550px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px 32px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        @media (max-width: 900px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                padding: 18px 5%;
+            }
+
+            .nav-center, .nav-right {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            main {
+                padding: 40px 5%;
+            }
+
+            .accordion-title {
+                font-size: 1rem;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="logo">stack<span>digital</span></a>
+        
+        <nav class="nav-center">
+            <a href="ecommerce.html">E-Commerce Optimisation</a>
+            <a href="marketing.html" class="active">Performance Marketing</a>
+            <a href="strategy.html">SME Growth Strategy</a>
+        </nav>
+        
+        <nav class="nav-right">
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="ecommerce.html">E-Commerce Optimisation</a>
+            <a href="marketing.html">Performance Marketing</a>
+            <a href="strategy.html">SME Growth Strategy</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="category-tag">Service Area 02</div>
+        <h1>Performance Marketing</h1>
+        <p class="lead">
+            Paid media engineered for net commercial return. We manage, test, and scale campaigns across Meta, Google, and paid search with ruthless focus on contribution margin—not vanity screenshots.
+        </p>
+
+        <!-- Section 1: The Challenge -->
+        <section class="content-section">
+            <div class="section-title">The Problem</div>
+            <h2 class="section-heading">You can’t take ROAS screenshots to the bank</h2>
+            <div class="body-text">
+                <p>
+                    Most agency reporting is designed to justify retainers rather than grow bottom-line profit. Reporting a "4x ROAS" inside an ad dashboard is meaningless if those conversions were branded searches you would have captured anyway, or if delivery costs, returns, and platform fees turn that revenue into a net loss.
+                </p>
+                <p>
+                    Between signal loss, aggressive privacy updates, and rising CPMs across major ad networks, the old playbook of turning on broad ads and letting the algorithm do the work is over. Profitable growth requires clean server-side data infrastructure, creative testing frameworks that actually resonate with buyers, and managing ad spend against true Blended Customer Acquisition Cost (CAC) and Cash Contribution.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Commercial Expertise -->
+        <section class="content-section">
+            <div class="section-title">Commercial Expertise</div>
+            <h2 class="section-heading">Campaigns built on commercial reality and clean data</h2>
+            <div class="body-text">
+                <p>
+                    I operate with a simple principle: every euro deployed into an ad platform must carry measurable commercial accountability.
+                </p>
+                <p>
+                    Having audited, planned, and scaled multi-channel ad spend for household retail and commercial brands, I know how to navigate the technical and commercial nuances of Meta Ads, Google Ads, and automated retention flows. From setting up rock-solid conversion tracking via Google Tag Manager and GA4 to structuring creative fatigue buffers and tiered audience funnels, every campaign is designed to protect margins while driving volume.
+                </p>
+                <p>
+                    No vague buzzwords or opaque agency markups—just transparent campaign architecture, precise tracking, and reporting tied directly to your cash flow.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 3: FAQ Accordion -->
+        <section class="faq-section">
+            <div class="section-title">Practical Answers</div>
+            <h2 class="section-heading">Common questions about paid acquisition</h2>
+
+            <div class="accordion">
+                
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">01. Our agency reports high ROAS, but our actual profit isn’t moving. Why?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            This is the most common trap in modern digital marketing. Ad platforms love taking credit for sales that were going to happen organically. If an agency runs heavy remarketing or bids heavily on your own brand name on Google, the platform dashboard will show massive ROAS numbers, but incremental revenue is close to zero. We strip out self-serving attribution and look at your Blended Marketing Efficiency Ratio (MER)—total sales divided by total ad spend—to evaluate genuine business growth.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">02. Is paid advertising getting too expensive for SMEs to compete?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            Ad costs have risen, but you don't need the biggest budget to win—you need the highest operational conversion efficiency. When your storefront converts at 3% instead of 1.5%, or your average basket value is €20 higher, you can profitably afford to acquire customers that your competitors cannot. Paid media should never operate in a silo; we integrate your ad creative directly with your on-site conversion funnel to maintain healthy unit economics.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">03. Which channels should my business actually be advertising on?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            It depends on intent. If people are actively searching for what you sell, Google Search and Shopping are your first port of call because the buying intent is immediate. If you need to generate demand or your product requires visual demonstration, Meta (Instagram/Facebook) remains unmatched in volume and scale. We don't dilute your budget across four channels simultaneously; we master the highest-converting channel first before expanding.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">04. How do you handle privacy changes and tracking inaccuracies?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            Relying on standard browser cookies is no longer enough. We implement first-party server-side tracking, Meta Conversions API (CAPI), and Google Tag Manager setups to feed clean, consented purchase signals back into the advertising algorithms. High-quality data inputs train the platform's AI models to find real buyers instead of low-intent clickers.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span class="accordion-title">05. What kind of ad budget do we need to test properly?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>
+                            You don’t need enterprise budgets to test viability, but you do need enough spend to exit the learning phase and generate statistical significance. For most established SMEs, a focused spend of €1,500 to €3,000 per month on a single core channel is sufficient to validate creative angles, measure baseline CAC, and demonstrate whether the channel can scale profitably.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Bottom Action CTA -->
+        <div class="cta-box">
+            <div>
+                <h3>Audit your current marketing efficiency</h3>
+                <p>Book a consultation. We’ll review your existing ad accounts, strip out wasted spend, and set up a clear roadmap for scalable acquisition.</p>
+            </div>
+            <a href="contact.html" class="cta-button">Free Consultation</a>
+        </div>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('open');
+        });
+
+        // Accordion functionality
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const body = item.querySelector('.accordion-body');
+
+            header.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+
+                // Close all other open items
+                accordionItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.accordion-body').style.maxHeight = null;
+                });
+
+                // Toggle selected item
+                if (!isOpen) {
+                    item.classList.add('active');
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

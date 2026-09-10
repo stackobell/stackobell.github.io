@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stack Digital | Commercial Growth Consultant</title>
+    <title>E-Commerce Optimisation | Stack Digital</title>
     <style>
         :root {
             --bg: #f4f4f2;
             --text: #0a0a0a;
             --accent: #f2a900;
             --muted: #555555;
+            --border: #e0e0e0;
         }
 
         * {
@@ -54,7 +55,6 @@
             font-weight: 300;
         }
 
-        /* Desktop Nav Links */
         .nav-center {
             display: flex;
             justify-content: center;
@@ -71,6 +71,11 @@
             position: relative;
             padding-bottom: 4px;
             transition: color 0.2s;
+        }
+
+        /* Highlight active page */
+        .nav-center a.active {
+            border-bottom: 2px solid var(--accent);
         }
 
         .nav-center a::after, .mobile-menu a::after {
@@ -99,7 +104,7 @@
             justify-content: flex-end;
         }
 
-        /* Mobile Hamburger Icon */
+        /* Mobile Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -118,7 +123,6 @@
             height: 2px;
             background-color: var(--text);
             transition: all 0.3s ease-in-out;
-            transform-origin: center;
         }
 
         .hamburger.active span:nth-child(1) {
@@ -133,7 +137,6 @@
             transform: translateY(-8px) rotate(-45deg);
         }
 
-        /* Mobile Menu */
         .mobile-menu {
             display: none;
             flex-direction: column;
@@ -153,85 +156,95 @@
             display: flex;
         }
 
-        .mobile-menu a {
-            font-size: 1rem;
-            padding-bottom: 6px;
-        }
-
-        /* Left-Aligned Main Layout */
+        /* Service Content */
         main {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            text-align: left;
-            padding: 60px 4%;
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
             margin: 0 auto;
+            padding: 60px 4%;
         }
 
-        .hero-text-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 30px;
-        }
-
-        .circle-solid {
-            position: absolute;
-            width: 140px;
-            height: 140px;
-            background-color: var(--accent);
-            border-radius: 50%;
-            top: -20px;
-            left: -40px;
-            z-index: 1;
-        }
-
-        .circle-outline {
-            position: absolute;
-            width: 160px;
-            height: 160px;
-            border: 2px solid var(--accent);
-            border-radius: 50%;
-            bottom: -30px;
-            right: -20px;
-            z-index: 1;
+        .category-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 15px;
         }
 
         h1 {
-            font-size: clamp(4rem, 9vw, 7.5rem);
-            line-height: 0.85;
+            font-size: clamp(2.8rem, 6vw, 5rem);
             font-weight: 800;
-            letter-spacing: -0.04em;
-            position: relative;
-            z-index: 2;
-        }
-
-        .lowercase {
-            text-transform: lowercase;
-            display: block;
-        }
-
-        .uppercase {
+            line-height: 0.95;
+            letter-spacing: -0.03em;
             text-transform: uppercase;
-            display: block;
+            margin-bottom: 30px;
+            max-width: 900px;
         }
 
-        .intro-block {
-            max-width: 650px;
+        .lead {
+            font-size: 1.35rem;
+            line-height: 1.5;
+            font-weight: 500;
+            max-width: 750px;
             margin-bottom: 50px;
         }
 
-        .intro-text {
-            font-size: 1.25rem;
-            line-height: 1.5;
-            font-weight: 500;
-            margin-bottom: 25px;
+        /* Editorial Features Grid */
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            border-top: 1px solid var(--text);
+            padding-top: 40px;
+            margin-bottom: 60px;
         }
 
-        /* CTA Consultation Button */
+        .pillar {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pillar-number {
+            font-size: 0.9rem;
+            font-weight: 800;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        .pillar h2 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.01em;
+            margin-bottom: 15px;
+        }
+
+        .pillar p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--muted);
+        }
+
+        /* Bottom Action Bar */
+        .cta-box {
+            border-top: 1px solid var(--text);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cta-box p {
+            font-size: 1.15rem;
+            font-weight: 600;
+            max-width: 600px;
+        }
+
         .cta-button {
             display: inline-block;
             background-color: var(--accent);
@@ -250,54 +263,6 @@
             opacity: 0.95;
         }
 
-        /* Brands Section */
-        .brands-section {
-            width: 100%;
-            border-top: 1px solid var(--text);
-            padding-top: 30px;
-            margin-top: 10px;
-        }
-
-        .brands-title {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--muted);
-            font-weight: 600;
-            margin-bottom: 30px;
-        }
-
-        .brands-grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-            width: 100%;
-        }
-
-        .brand-logo-container {
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .brand-logo-container:hover {
-            transform: translateY(-2px) rotate(1deg);
-        }
-
-        .brand-logo-container img {
-            height: 100%;
-            max-height: 70px;
-            max-width: 190px;
-            width: auto;
-            object-fit: contain;
-            mix-blend-mode: multiply;
-        }
-
-        /* Mobile Breakpoint */
         @media (max-width: 900px) {
             header {
                 display: flex;
@@ -317,40 +282,9 @@
                 padding: 40px 5%;
             }
 
-            h1 {
-                font-size: 4.5rem;
-            }
-
-            .circle-solid {
-                width: 100px;
-                height: 100px;
-                top: -10px;
-                left: -20px;
-            }
-
-            .circle-outline {
-                width: 110px;
-                height: 110px;
-                bottom: -15px;
-                right: -10px;
-            }
-
-            .brands-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                gap: 24px 16px;
-                width: 100%;
-                justify-items: center;
-            }
-
-            .brand-logo-container {
-                height: 48px;
-                width: 100%;
-            }
-
-            .brand-logo-container img {
-                max-width: 100%;
-                max-height: 48px;
+            .pillar-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
             }
 
             .cta-button {
@@ -363,10 +297,10 @@
 <body>
 
     <header>
-        <a href="index.html" class="logo">stack<span>DIGITAL</span></a>
+        <a href="index.html" class="logo">stack<span>digital</span></a>
         
         <nav class="nav-center">
-            <a href="ecommerce.html">E-Commerce Optimisation</a>
+            <a href="ecommerce.html" class="active">E-Commerce Optimisation</a>
             <a href="marketing.html">Performance Marketing</a>
             <a href="strategy.html">SME Growth Strategy</a>
         </nav>
@@ -390,51 +324,35 @@
     </header>
 
     <main>
-        <div class="hero-text-wrapper">
-            <div class="circle-solid"></div>
-            <h1>
-                <span class="lowercase">stack</span>
-                <span class="uppercase">digital</span>
-            </h1>
-            <div class="circle-outline"></div>
-        </div>
+        <div class="category-tag">Service Area 01</div>
+        <h1>E-Commerce Optimisation</h1>
+        <p class="lead">
+            Turning traffic into commercial margin. We audit, streamline, and re-engineer your digital storefront to eliminate friction, lift conversion rates, and maximise average order value.
+        </p>
 
-        <div class="intro-block">
-            <p class="intro-text">
-                Building high-performance digital frameworks that scale your business on and off-line. No waffle, just commercial growth for SMEs that want to grow.
-            </p>
-            <a href="contact.html" class="cta-button">Free Consultation</a>
-        </div>
-
-        <div class="brands-section">
-            <div class="brands-title">Brands I've helped</div>
-            <div class="brands-grid">
-                
-                <div class="brand-logo-container" title="Bewley's">
-                    <img src="images/bewleys.png.png" alt="Bewley's Logo">
-                </div>
-
-                <div class="brand-logo-container" title="Windsor Motors">
-                    <img src="images/windsor.png.png" alt="Windsor Motors Logo">
-                </div>
-
-                <div class="brand-logo-container" title="Nissan Ireland">
-                    <img src="images/nissan.png.png" alt="Nissan Logo">
-                </div>
-
-                <div class="brand-logo-container" title="Renault Ireland">
-                    <img src="images/renault.png.png" alt="Renault Logo">
-                </div>
-
-                <div class="brand-logo-container" title="McGuirks Golf">
-                    <img src="images/mcguirks.png.png" alt="McGuirks Golf Logo">
-                </div>
-
-                <div class="brand-logo-container" title="Dublin City University">
-                    <img src="images/DCU.png.png" alt="DCU Logo">
-                </div>
-
+        <div class="pillar-grid">
+            <div class="pillar">
+                <div class="pillar-number">[01]</div>
+                <h2>Conversion Rate Optimisation</h2>
+                <p>Pinpoint exactly where customers drop off in your checkout and product funnels. Data-driven UX refinements that directly increase your revenue per visitor without increasing ad spend.</p>
             </div>
+
+            <div class="pillar">
+                <div class="pillar-number">[02]</div>
+                <h2>Tech Stack & Platform Strategy</h2>
+                <p>Architecting scalable e-commerce infrastructure. Choosing the right platforms, checkout integrations, ERP connectors, and apps so your site remains rapid and reliable under volume.</p>
+            </div>
+
+            <div class="pillar">
+                <div class="pillar-number">[03]</div>
+                <h2>Merchandising & Retention</h2>
+                <p>Smarter cross-sells, bundles, and post-purchase automated email workflows to boost Customer Lifetime Value (LTV) and encourage consistent repeat transactions.</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <p>Ready to unlock more revenue from your existing store traffic?</p>
+            <a href="contact.html" class="cta-button">Free Consultation</a>
         </div>
     </main>
 

@@ -803,7 +803,23 @@
 
         .client-card {
             border-top: 2px solid var(--text);
-            padding-top: 14px;
+            padding-top: 16px;
+        }
+
+        .client-logo {
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .client-logo img {
+            max-height: 72px;
+            max-width: 100%;
+            width: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
         }
 
         .client-name {
@@ -824,7 +840,16 @@
         @media (max-width: 900px) {
             .client-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 20px 16px;
+                gap: 24px 16px;
+            }
+
+            .client-logo {
+                height: 54px;
+                margin-bottom: 12px;
+            }
+
+            .client-logo img {
+                max-height: 54px;
             }
 
             .client-name {
@@ -901,21 +926,25 @@
                 <div class="client-grid">
 
                     <div class="client-card">
+                        <div class="client-logo"><img src="images/renault.png.png" alt="Renault Ireland" loading="lazy"></div>
                         <h3 class="client-name">Renault Ireland</h3>
                         <p class="client-work">Video production consultancy</p>
                     </div>
 
                     <div class="client-card">
+                        <div class="client-logo"><img src="images/DCU.png.png" alt="Dublin City University" loading="lazy"></div>
                         <h3 class="client-name">Dublin City University</h3>
                         <p class="client-work">Web design</p>
                     </div>
 
                     <div class="client-card">
+                        <div class="client-logo"><img src="images/mis.png" alt="Malahide Insurance Shop" loading="lazy"></div>
                         <h3 class="client-name">Malahide Insurance Shop</h3>
                         <p class="client-work">Website platform consultancy</p>
                     </div>
 
                     <div class="client-card">
+                        <div class="client-logo"><img src="images/paddys-podcast.png" alt="Paddy's Podcast" loading="lazy"></div>
                         <h3 class="client-name">Paddy's Podcast</h3>
                         <p class="client-work">Website build, podcast mastering and launch</p>
                     </div>

@@ -1,16 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IE">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Stack Digital</title>
+    <meta name="description" content="Tell me about your business and what isn't working. I reply to every enquiry within one working day.">
+    <link rel="canonical" href="https://stackobell.github.io/contact.html">
+    <meta name="theme-color" content="#f4f4f2">
+
+    <!-- Link preview cards for LinkedIn, WhatsApp, Slack, iMessage and email -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Stack Digital">
+    <meta property="og:locale" content="en_IE">
+    <meta property="og:title" content="Contact | Stack Digital">
+    <meta property="og:description" content="Tell me about your business and what isn't working. I reply to every enquiry within one working day.">
+    <meta property="og:url" content="https://stackobell.github.io/contact.html">
+    <meta property="og:image" content="https://stackobell.github.io/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Stack Digital, commercial growth consultancy for ambitious Irish SMEs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | Stack Digital">
+    <meta name="twitter:description" content="Tell me about your business and what isn't working. I reply to every enquiry within one working day.">
+    <meta name="twitter:image" content="https://stackobell.github.io/images/og-image.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <style>
         :root {
             --bg: #f4f4f2;
             --text: #0a0a0a;
             --accent: #f2a900;
             --muted: #555555;
-            --border: #cccccc;
+            --border: #e0e0e0;
         }
 
         * {
@@ -26,6 +49,25 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Skip link for keyboard and screen reader users */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            background: var(--accent);
+            color: var(--text);
+            padding: 12px 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            z-index: 200;
+        }
+
+        .skip-link:focus {
+            left: 0;
         }
 
         /* Top Navigation Bar */
@@ -73,6 +115,10 @@
             transition: color 0.2s;
         }
 
+        .nav-center a.active {
+            border-bottom: 2px solid var(--accent);
+        }
+
         .nav-center a::after, .mobile-menu a::after {
             content: '';
             position: absolute;
@@ -86,7 +132,8 @@
             transition: transform 0.25s ease-out;
         }
 
-        .nav-center a:hover, .mobile-menu a:hover {
+        .nav-center a:hover, .mobile-menu a:hover,
+        .nav-right a:hover {
             color: var(--accent);
         }
 
@@ -97,6 +144,12 @@
         .nav-right {
             display: flex;
             justify-content: flex-end;
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible,
+        select:focus-visible, textarea:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
         }
 
         /* Mobile Hamburger */
@@ -151,7 +204,136 @@
             display: flex;
         }
 
-        /* Main Form Area */
+        .mobile-menu a {
+            font-size: 1rem;
+            padding-bottom: 6px;
+        }
+
+        /* Shared CTA button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px 32px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        /* Site Footer */
+        .site-footer {
+            border-top: 1px solid var(--text);
+            padding: 50px 4% 24px 4%;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand .logo {
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--muted);
+            max-width: 380px;
+        }
+
+        .footer-loc {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .footer-heading {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .site-footer ul {
+            list-style: none;
+        }
+
+        .site-footer li {
+            margin-bottom: 10px;
+        }
+
+        .site-footer li a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .site-footer li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-base {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-base p {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 900px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                padding: 18px 5%;
+            }
+
+            .nav-center, .nav-right {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .site-footer {
+                padding: 40px 5% 24px 5%;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
         main {
             flex: 1;
             display: flex;
@@ -175,11 +357,19 @@
         .page-intro {
             font-size: 1.15rem;
             color: var(--muted);
-            margin-bottom: 40px;
+            margin-bottom: 16px;
             line-height: 1.5;
         }
 
-        /* Form Styling */
+        .qualifier {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            border-left: 3px solid var(--accent);
+            padding: 4px 0 4px 16px;
+            margin-bottom: 40px;
+            max-width: 620px;
+        }
+
         form {
             width: 100%;
             display: flex;
@@ -206,7 +396,7 @@
             letter-spacing: 0.05em;
         }
 
-        input, textarea {
+        input, textarea, select {
             width: 100%;
             padding: 14px 16px;
             background-color: transparent;
@@ -215,10 +405,11 @@
             font-family: inherit;
             font-size: 1rem;
             outline: none;
+            border-radius: 0;
             transition: border-color 0.2s;
         }
 
-        input:focus, textarea:focus {
+        input:focus, textarea:focus, select:focus {
             border-color: var(--accent);
         }
 
@@ -247,21 +438,12 @@
             opacity: 0.95;
         }
 
+        .form-note {
+            font-size: 0.85rem;
+            color: var(--muted);
+        }
+
         @media (max-width: 900px) {
-            header {
-                display: flex;
-                justify-content: space-between;
-                padding: 18px 5%;
-            }
-
-            .nav-center, .nav-right {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
             main {
                 padding: 40px 5%;
             }
@@ -279,52 +461,83 @@
 </head>
 <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header>
         <a href="index.html" class="logo">stack<span>digital</span></a>
-        
-        <nav class="nav-center">
-            <a href="ecommerce.html">E-Commerce Optimisation</a>
-            <a href="marketing.html">Performance Marketing</a>
-            <a href="strategy.html">SME Growth Strategy</a>
+
+        <nav class="nav-center" aria-label="Services">
+            <a href="marketing.html">Paid Ads Management</a>
+            <a href="ecommerce.html">Conversion Audits</a>
+            <a href="strategy.html">Dashboards &amp; Analytics</a>
         </nav>
-        
-        <nav class="nav-right">
+
+        <nav class="nav-right" aria-label="Contact">
             <a href="contact.html">Contact</a>
         </nav>
 
-        <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
             <span></span>
             <span></span>
             <span></span>
         </button>
 
         <div class="mobile-menu" id="mobile-menu">
-            <a href="ecommerce.html">E-Commerce Optimisation</a>
-            <a href="marketing.html">Performance Marketing</a>
-            <a href="strategy.html">SME Growth Strategy</a>
+            <a href="marketing.html">Paid Ads Management</a>
+            <a href="ecommerce.html">Conversion Audits</a>
+            <a href="strategy.html">Dashboards &amp; Analytics</a>
             <a href="contact.html">Contact</a>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <h1>Let's Talk</h1>
         <p class="page-intro">Fill out the details below to arrange a free consultation.</p>
+        <p class="qualifier">
+            I work best with SMEs spending roughly &euro;1,000 to &euro;5,000 a month on ads, or running an e-commerce store that needs a senior pair of eyes. If that isn't you yet, still get in touch and I'll point you in the right direction.
+        </p>
 
         <form action="https://formspree.io/f/xaeyjvyv" method="POST">
+            <!-- Sends the visitor to your own thank-you page instead of Formspree's -->
+            <input type="hidden" name="_next" value="https://stackobell.github.io/thanks.html">
+            <input type="hidden" name="_subject" value="New enquiry from stackdigital.ie">
+            <!-- Honeypot: hidden from people, filled in by bots, so the spam is dropped -->
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
+
             <div class="form-row">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required placeholder="John Doe">
+                    <input type="text" id="name" name="name" required autocomplete="name" placeholder="Jane Murphy">
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+353 87 123 4567">
+                    <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="+353 87 123 4567">
                 </div>
             </div>
 
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required autocomplete="email" placeholder="jane@yourbusiness.ie">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company or website</label>
+                    <input type="text" id="company" name="company" autocomplete="organization" placeholder="yourbusiness.ie">
+                </div>
+            </div>
+
+            <!-- Qualifying field. Delete this whole .form-group block if you'd rather not ask. -->
             <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                <label for="spend">Current monthly ad spend</label>
+                <select id="spend" name="spend" required>
+                    <option value="">Please select</option>
+                    <option>Under &euro;1,000</option>
+                    <option>&euro;1,000 to &euro;5,000</option>
+                    <option>&euro;5,000 to &euro;15,000</option>
+                    <option>&euro;15,000+</option>
+                    <option>Not running ads yet</option>
+                    <option>Not sure</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -333,16 +546,56 @@
             </div>
 
             <button type="submit" class="submit-btn">Submit</button>
+            <p class="form-note">I read every enquiry personally and reply within one working day.</p>
         </form>
     </main>
 
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo">stack<span>digital</span></a>
+                <p>Commercial growth consultancy for ambitious Irish SMEs. Paid media, conversion and commercial reporting, run by a senior operator.</p>
+                <p class="footer-loc">Dublin, Ireland</p>
+            </div>
+
+            <div class="footer-col">
+                <h2 class="footer-heading">Services</h2>
+                <ul>
+                    <li><a href="marketing.html">Paid Ads Management</a></li>
+                    <li><a href="ecommerce.html">Conversion Audits</a></li>
+                    <li><a href="strategy.html">Dashboards &amp; Analytics</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h2 class="footer-heading">Get in touch</h2>
+                <ul>
+                    <!-- PLACEHOLDER: swap for your real business email address -->
+                    <li><a href="mailto:hello@stackdigital.ie">hello@stackdigital.ie</a></li>
+                    <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+                    <li><a href="https://www.linkedin.com/in/your-profile/" rel="noopener">LinkedIn</a></li>
+                    <li><a href="contact.html">Enquiry form</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-base">
+            <p>&copy; 2026 Stack Digital. All rights reserved.</p>
+            <!-- Uncomment once the business name is registered with the CRO:
+            <p>Registered business name in Ireland. CRO no. 000000.</p>
+            -->
+        </div>
+    </footer>
+
     <script>
+        // Mobile menu toggle
         const hamburgerBtn = document.getElementById('hamburger-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
         hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
+            const isOpen = hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('open', isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
         });
     </script>
 

@@ -1,0 +1,102 @@
+STACK DIGITAL - REBUILT FILES (PASS 2)
+======================================
+
+8 pages. Drop everything into the root of your GitHub Pages repo, overwriting.
+Keep your existing /images folder contents (the brand logos) and just ADD
+og-image.png into it.
+
+
+BEFORE GOING LIVE
+=================
+
+A. THREE SITEWIDE PLACEHOLDERS (search for the word PLACEHOLDER)
+   1. hello@stackdigital.ie   footer of all 8 pages, thanks.html, about.html,
+                              the homepage CTA, and index.html schema.
+   2. LinkedIn URL            footer of all 8 pages.
+   3. CRO registration line   commented out in every footer. Uncomment once
+                              the business name is registered.
+
+B. FILL-IN MARKERS (search for "[[" )
+   These are facts only you know. Nine of them, all on about.html except the
+   three brand captions on index.html:
+   - about.html   years of experience (x2)
+   - about.html   annual paid media spend managed
+   - about.html   your minimum ad spend threshold
+   - index.html   one short caption each for Bewley's, Windsor, Nissan
+
+C. YOUR PHOTO
+   about.html has a placeholder panel where your photo goes, with an HTML
+   comment directly above it showing the exact markup to paste in. Use a
+   portrait-orientation shot, roughly 800x1000px, saved to images/sean.jpg.
+   This is the single biggest credibility item on the page. Don't skip it.
+
+D. ONE FIND-AND-REPLACE WHEN THE DOMAIN GOES LIVE
+   Replace:  https://stackobell.github.io
+   With:     https://stackdigital.ie
+   That updates canonicals, link-preview tags, the Formspree redirect, the
+   sitemap and robots.txt across every file. Until then everything works
+   correctly on the github.io address.
+
+
+WHAT CHANGED IN THIS PASS
+=========================
+
+VOICE: FIRST PERSON SINGULAR
+- All declarative "we" is now "I". Two instances changed on marketing.html.
+- "We'll look at your campaigns" in the CTAs is left alone on purpose. There
+  "we" means you and the client, which is correct and reads as collaborative.
+- The FAQ questions written in the client's voice ("which one should we run?")
+  are also left alone. That's them talking, not you.
+- Added the network statement in two places: marketing.html FAQ 04, and a full
+  paragraph on about.html. It gives you the team capability without the agency
+  claim.
+
+NEW: about.html
+- Added to the main nav and the footer on every page.
+- Sections: who you are, where the experience comes from, a credentials list,
+  how you work, and what you don't do.
+- The "What I don't do" section is deliberate. Naming what you turn down is
+  the strongest credibility signal on a consultant's site and it kills bad-fit
+  enquiries before they cost you a call.
+
+BRANDS SECTION: SPLIT INTO TWO HONEST GROUPS
+- "Consultancy clients": Renault Ireland (video production), DCU (web design).
+- "Brands I've marketed in-house": McGuirks Golf, Bewley's, Windsor Motors,
+  Nissan Ireland.
+- Each logo now carries a caption line. Three need filling in.
+- This matters. A single undifferentiated logo wall implied all six were
+  client engagements. Splitting them is more honest and, because the two real
+  consultancy clients now stand on their own, it actually reads stronger.
+- Note: displaying former employers' logos is normal on a portfolio, but the
+  labelling has to be unambiguous, which is what this split does. If any
+  employer contract has a restriction on using their marks, check it.
+
+HOMEPAGE HERO: REWRITTEN
+- The h1 was the brand name, which said nothing and burned the largest line on
+  the page. The wordmark is now a styled div (still the visual anchor), and the
+  h1 is a real proposition: "Senior paid media and e-commerce expertise,
+  without the agency retainer."
+- Intro rewritten: names you, says who you work with, drops "frameworks".
+- Set in sentence case rather than the site's usual caps. Three lines of
+  all-caps is hard to read, and this is the one line that must be read.
+- Old copy if you want it back:
+  "Building high-performance digital marketing frameworks that scale your
+   business online and offline. If you're an ambitious SME looking for a
+   no-waffle approach to paid ads, conversion audits, and commercial
+   reporting, you're in the right place."
+
+CTAS: STILL ONE PER PAGE, BUT SPECIFIC
+- index / about:  Book a free consultation
+- marketing:      Get an ad spend review
+- ecommerce:      Request a conversion audit
+- strategy:       Book a data review
+- Every CTA now has a secondary plain-text email link under it, for people who
+  won't fill in a form.
+
+
+STILL OPEN
+==========
+- Pricing and packaging order. Nothing on the site blocks this; adding a
+  "from EUR X" line to ecommerce.html is a one-line edit when you decide.
+- Case study pages, which would be the highest-leverage thing you could add
+  next for outbound.

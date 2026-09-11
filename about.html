@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Se&aacute;n Tackaberry | Stack Digital</title>
+    <meta name="description" content="Fifteen years in Irish retail and e-commerce marketing. Who I am, how I work, and what I take on. Run directly, never handed to an account executive.">
+    <link rel="canonical" href="https://stackobell.github.io/about.html">
+    <meta name="theme-color" content="#f4f4f2">
+
+    <!-- Link preview cards for LinkedIn, WhatsApp, Slack, iMessage and email -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Stack Digital">
+    <meta property="og:locale" content="en_IE">
+    <meta property="og:title" content="About Se&aacute;n Tackaberry | Stack Digital">
+    <meta property="og:description" content="Fifteen years in Irish retail and e-commerce marketing. Who I am, how I work, and what I take on. Run directly, never handed to an account executive.">
+    <meta property="og:url" content="https://stackobell.github.io/about.html">
+    <meta property="og:image" content="https://stackobell.github.io/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Stack Digital, commercial growth consultancy for ambitious Irish SMEs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Se&aacute;n Tackaberry | Stack Digital">
+    <meta name="twitter:description" content="Fifteen years in Irish retail and e-commerce marketing. Who I am, how I work, and what I take on. Run directly, never handed to an account executive.">
+    <meta name="twitter:image" content="https://stackobell.github.io/images/og-image.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <style>
+        :root {
+            --bg: #f4f4f2;
+            --text: #0a0a0a;
+            --accent: #f2a900;
+            --muted: #555555;
+            --border: #e0e0e0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Skip link for keyboard and screen reader users */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            background: var(--accent);
+            color: var(--text);
+            padding: 12px 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            z-index: 200;
+        }
+
+        .skip-link:focus {
+            left: 0;
+        }
+
+        /* Top Navigation Bar */
+        header {
+            width: 100%;
+            border-bottom: 1px solid var(--text);
+            padding: 20px 4%;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
+            align-items: center;
+            gap: 20px;
+            position: relative;
+            background-color: var(--bg);
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -0.03em;
+            text-decoration: none;
+            color: var(--text);
+        }
+
+        .logo span {
+            color: var(--muted);
+            font-weight: 300;
+        }
+
+        .nav-center {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .nav-center a, .nav-right a, .mobile-menu a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding-bottom: 4px;
+            transition: color 0.2s;
+        }
+
+        .nav-center a.active {
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .nav-center a::after, .mobile-menu a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transform-origin: bottom left;
+            transition: transform 0.25s ease-out;
+        }
+
+        .nav-center a:hover, .mobile-menu a:hover,
+        .nav-right a:hover {
+            color: var(--accent);
+        }
+
+        .nav-center a:hover::after, .mobile-menu a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-right {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible,
+        select:focus-visible, textarea:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
+        }
+
+        /* Mobile Hamburger */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 26px;
+            height: 18px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 101;
+        }
+
+        .hamburger span {
+            width: 100%;
+            height: 2px;
+            background-color: var(--text);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--bg);
+            border-bottom: 1px solid var(--text);
+            padding: 30px 4%;
+            gap: 20px;
+            align-items: flex-start;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .mobile-menu.open {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-size: 1rem;
+            padding-bottom: 6px;
+        }
+
+        /* Shared CTA button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px 32px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        /* Site Footer */
+        .site-footer {
+            border-top: 1px solid var(--text);
+            padding: 50px 4% 24px 4%;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand .logo {
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--muted);
+            max-width: 380px;
+        }
+
+        .footer-loc {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .footer-heading {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .site-footer ul {
+            list-style: none;
+        }
+
+        .site-footer li {
+            margin-bottom: 10px;
+        }
+
+        .site-footer li a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .site-footer li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-base {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-base p {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 900px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                padding: 18px 5%;
+            }
+
+            .nav-center, .nav-right {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .site-footer {
+                padding: 40px 5% 24px 5%;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Page Layout */
+        main {
+            flex: 1;
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 60px 4% 80px 4%;
+        }
+
+        .category-tag {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .lead {
+            font-size: 1.35rem;
+            line-height: 1.5;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+
+        .content-section {
+            border-top: 1px solid var(--text);
+            padding: 45px 0;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        .section-heading {
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .body-text {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #222;
+        }
+
+        .body-text p + p {
+            margin-top: 16px;
+        }
+
+        /* Accordion FAQ */
+        .faq-section {
+            border-top: 1px solid var(--text);
+            padding: 45px 0 60px 0;
+        }
+
+        .accordion {
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .accordion-item:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .accordion-header {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+            cursor: pointer;
+            font-family: inherit;
+        }
+
+        .accordion-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text);
+            letter-spacing: -0.01em;
+            padding-right: 20px;
+            transition: color 0.2s;
+        }
+
+        .accordion-item:hover .accordion-title {
+            color: var(--accent);
+        }
+
+        .accordion-icon {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: var(--text);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            line-height: 1;
+        }
+
+        .accordion-item.active .accordion-icon {
+            transform: rotate(45deg);
+            color: var(--accent);
+        }
+
+        .accordion-body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out;
+            padding: 0;
+        }
+
+        .accordion-body p {
+            font-size: 1.02rem;
+            line-height: 1.65;
+            color: var(--muted);
+            padding-bottom: 24px;
+        }
+
+        /* Bottom Action Bar */
+        .cta-box {
+            border-top: 1px solid var(--text);
+            padding-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .cta-box h2 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+            margin-bottom: 6px;
+        }
+
+        .cta-box p {
+            font-size: 1rem;
+            color: var(--muted);
+            max-width: 550px;
+        }
+
+        @media (max-width: 900px) {
+            main {
+                padding: 40px 5%;
+            }
+
+            .accordion-title {
+                font-size: 1rem;
+            }
+        }
+
+        /* --- pass 2 additions --- */
+        .cta-actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .cta-alt {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .cta-alt a {
+            color: var(--text);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .cta-alt a:hover {
+            color: var(--accent);
+        }
+
+        /* Homepage hero claim */
+        .hero-claim {
+            text-transform: none;
+            font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            max-width: 900px;
+            margin-bottom: 22px;
+        }
+
+        .wordmark {
+            position: relative;
+            display: inline-block;
+            font-size: clamp(3.2rem, 7vw, 6rem);
+            line-height: 1;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            text-transform: uppercase;
+            z-index: 2;
+        }
+
+        .wordmark .lower {
+            text-transform: lowercase;
+            display: block;
+        }
+
+        /* Brands, split into two honest groups */
+        .brand-group + .brand-group {
+            margin-top: 30px;
+        }
+
+        .brand-group-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .brands-grid.cols-2 {
+            grid-template-columns: repeat(2, 1fr);
+            max-width: 420px;
+        }
+
+        .brands-grid.cols-4 {
+            grid-template-columns: repeat(4, 1fr);
+            max-width: 840px;
+        }
+
+        .brand-logo-container {
+            flex-direction: column;
+            gap: 8px;
+            height: auto;
+        }
+
+        .brand-logo-container img {
+            height: 56px;
+        }
+
+        .brand-note {
+            font-size: 0.72rem;
+            line-height: 1.35;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        /* About page */
+        .about-top {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 40px;
+            align-items: start;
+            margin-bottom: 10px;
+        }
+
+        .portrait {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            border: 1px solid var(--text);
+            background: repeating-linear-gradient(45deg, #ececea, #ececea 10px, #e4e4e1 10px, #e4e4e1 20px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            padding: 20px;
+        }
+
+        .portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .fact-list {
+            list-style: none;
+            margin-top: 8px;
+        }
+
+        .fact-list li {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            padding: 14px 0 14px 26px;
+            border-bottom: 1px solid var(--border);
+            position: relative;
+        }
+
+        .fact-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 22px;
+            width: 12px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        .fact-list li:first-child {
+            border-top: 1px solid var(--border);
+        }
+
+        .pull-note {
+            border-left: 3px solid var(--accent);
+            padding: 6px 0 6px 18px;
+            margin-top: 20px;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 900px) {
+            .about-top {
+                grid-template-columns: 1fr;
+                gap: 26px;
+            }
+
+            .portrait {
+                max-width: 240px;
+            }
+
+            .brands-grid.cols-2,
+            .brands-grid.cols-4 {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 100%;
+            }
+
+            .cta-actions {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header>
+        <a href="index.html" class="logo">stack<span>digital</span></a>
+
+        <nav class="nav-center" aria-label="Services">
+            <a href="marketing.html">Paid Ads Management</a>
+            <a href="ecommerce.html">Conversion Audits</a>
+            <a href="strategy.html">Dashboards &amp; Analytics</a>
+            <a href="about.html" class="active">About</a>
+        </nav>
+
+        <nav class="nav-right" aria-label="Contact">
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="marketing.html">Paid Ads Management</a>
+            <a href="ecommerce.html">Conversion Audits</a>
+            <a href="strategy.html">Dashboards &amp; Analytics</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </header>
+
+    <main id="main">
+        <div class="category-tag">About</div>
+        <h1>Se&aacute;n Tackaberry</h1>
+
+        <div class="about-top">
+            <!-- SWAP THIS: replace the whole <div class="portrait"> block below with
+                 <div class="portrait"><img src="images/sean.jpg" alt="Se&aacute;n Tackaberry"></div>
+                 once you've added a photo to the images folder. Landscape crops badly here,
+                 so use a portrait-orientation shot, roughly 800x1000px. -->
+            <div class="portrait">Your photo goes here</div>
+
+            <div>
+                <p class="lead" style="margin-bottom:24px;">
+                    I've spent [[ number ]] years running marketing and e-commerce for Irish retail and motor brands. Stack Digital is how I do that work for a small number of SMEs directly, without the agency layer in between.
+                </p>
+                <div class="body-text">
+                    <p>
+                        Most SMEs sit in an awkward gap. The problems are senior ones: which channel actually pays, whether the tracking can be trusted, why the checkout leaks, where the next euro of budget should go. But the volume of work doesn't justify a senior full-time hire, and agencies solve that by selling you a partner and staffing you with a junior.
+                    </p>
+                    <p>
+                        I'm the third option. You get the senior operator on the account, because I'm the only person on it.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <section class="content-section">
+            <div class="section-title">Background</div>
+            <h2 class="section-heading">Where the experience comes from</h2>
+            <div class="body-text">
+                <p>
+                    Most recently I led e-commerce and marketing for McGuirks Golf, a premium Irish golf retailer trading across 21 stores and online. Before that, motor retail and hospitality brands including Windsor Motors, Nissan Ireland and Bewley's. Alongside that I've taken on consultancy work directly, including video production for Renault Ireland and web design for Dublin City University.
+                </p>
+            </div>
+
+            <ul class="fact-list">
+                <li>[[ number ]] years in digital marketing, across in-house and agency roles</li>
+                <li>Managed roughly [[ &euro;X ]] in annual paid media spend across Google and Meta</li>
+                <li>Ran e-commerce and paid search for a 21-store Irish retail group</li>
+                <li>Delivered a full Shopify Plus replatform, from scoping through to launch</li>
+                <li>Build GA4, Google Tag Manager and Looker Studio setups that survive audit</li>
+                <li>Based in Dublin, working with clients across Ireland</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <div class="section-title">How I Work</div>
+            <h2 class="section-heading">Directly, and with a deliberately small client list</h2>
+            <div class="body-text">
+                <p>
+                    I take on a small number of clients at any one time. That's a constraint, not a sales line: it's the only way the person you hired stays the person doing the work. You deal with me from the first call through to delivery, and there is nobody to be handed off to.
+                </p>
+                <p>
+                    Where a project needs a specialist I don't claim to be, whether that's development, video production, design or photography, I bring in people I've worked with for years and I manage them. You still have one point of contact, one invoice and one person accountable for the result. For bigger builds that's usually the better answer than stretching one person across everything.
+                </p>
+                <p>
+                    Practically: I reply to enquiries within one working day. Audits are fixed scope and fixed price, with a date on them. Retainers run rolling monthly with 30 days' notice, because I'd rather earn the next month than lock you into twelve.
+                </p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-title">Scope</div>
+            <h2 class="section-heading">What I don't do</h2>
+            <div class="body-text">
+                <p>
+                    Worth saying plainly, because it saves us both a call.
+                </p>
+                <p>
+                    I don't do SEO retainers, social media management or content calendars. I don't build websites from scratch. I don't take on brand strategy or creative campaign work. And I'm not the right fit if you're spending under [[ &euro;1,000 ]] a month on ads, because at that level the fee eats the gain and you're better off running it yourself for now.
+                </p>
+                <p>
+                    What I do is paid media, e-commerce conversion, and the tracking and reporting that tells you whether either is working.
+                </p>
+                <div class="pull-note">
+                    If you're not sure whether your problem is one of mine, send it over anyway. If it isn't, I'll tell you and point you at someone better placed.
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-box">
+            <div>
+                <h2>Think there's a fit?</h2>
+                <p>Tell me what's not working and what you're spending. I'll tell you honestly whether I can move the needle on it, and what that would cost.</p>
+            </div>
+            <div class="cta-actions">
+            <a href="contact.html" class="cta-button">Book a free consultation</a>
+            <p class="cta-alt">Prefer email? <a href="mailto:hello@stackdigital.ie">hello@stackdigital.ie</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo">stack<span>digital</span></a>
+                <p>Commercial growth consultancy for ambitious Irish SMEs. Paid media, conversion and commercial reporting, run by a senior operator.</p>
+                <p class="footer-loc">Dublin, Ireland</p>
+            </div>
+
+            <div class="footer-col">
+                <h2 class="footer-heading">Explore</h2>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="marketing.html">Paid Ads Management</a></li>
+                    <li><a href="ecommerce.html">Conversion Audits</a></li>
+                    <li><a href="strategy.html">Dashboards &amp; Analytics</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h2 class="footer-heading">Get in touch</h2>
+                <ul>
+                    <!-- PLACEHOLDER: swap for your real business email address -->
+                    <li><a href="mailto:hello@stackdigital.ie">hello@stackdigital.ie</a></li>
+                    <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+                    <li><a href="https://www.linkedin.com/in/your-profile/" rel="noopener">LinkedIn</a></li>
+                    <li><a href="contact.html">Enquiry form</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-base">
+            <p>&copy; 2026 Stack Digital. All rights reserved.</p>
+            <!-- Uncomment once the business name is registered with the CRO:
+            <p>Registered business name in Ireland. CRO no. 000000.</p>
+            -->
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburgerBtn.addEventListener('click', () => {
+            const isOpen = hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('open', isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        // Accordion
+        const accordionItems = document.querySelectorAll('.accordion-item');
+
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const body = item.querySelector('.accordion-body');
+
+            header.addEventListener('click', () => {
+                const isOpen = item.classList.contains('active');
+
+                accordionItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.accordion-body').style.maxHeight = null;
+                    otherItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
+                });
+
+                if (!isOpen) {
+                    item.classList.add('active');
+                    body.style.maxHeight = body.scrollHeight + 'px';
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

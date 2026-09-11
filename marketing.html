@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IE">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paid Ads Management | Stack Digital</title>
+    <title>Paid Ads Management for SMEs | Stack Digital</title>
+    <meta name="description" content="Senior Google and Meta ad management for Irish SMEs. Real orders, qualified leads and measurable profit, on a rolling monthly retainer.">
+    <link rel="canonical" href="https://stackobell.github.io/marketing.html">
+    <meta name="theme-color" content="#f4f4f2">
+
+    <!-- Link preview cards for LinkedIn, WhatsApp, Slack, iMessage and email -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Stack Digital">
+    <meta property="og:locale" content="en_IE">
+    <meta property="og:title" content="Paid Ads Management for SMEs | Stack Digital">
+    <meta property="og:description" content="Senior Google and Meta ad management for Irish SMEs. Real orders, qualified leads and measurable profit, on a rolling monthly retainer.">
+    <meta property="og:url" content="https://stackobell.github.io/marketing.html">
+    <meta property="og:image" content="https://stackobell.github.io/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Stack Digital, commercial growth consultancy for ambitious Irish SMEs">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Paid Ads Management for SMEs | Stack Digital">
+    <meta name="twitter:description" content="Senior Google and Meta ad management for Irish SMEs. Real orders, qualified leads and measurable profit, on a rolling monthly retainer.">
+    <meta name="twitter:image" content="https://stackobell.github.io/images/og-image.png">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <style>
         :root {
             --bg: #f4f4f2;
@@ -26,6 +49,25 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+        }
+
+        /* Skip link for keyboard and screen reader users */
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            background: var(--accent);
+            color: var(--text);
+            padding: 12px 20px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.85rem;
+            z-index: 200;
+        }
+
+        .skip-link:focus {
+            left: 0;
         }
 
         /* Top Navigation Bar */
@@ -90,7 +132,8 @@
             transition: transform 0.25s ease-out;
         }
 
-        .nav-center a:hover, .mobile-menu a:hover {
+        .nav-center a:hover, .mobile-menu a:hover,
+        .nav-right a:hover {
             color: var(--accent);
         }
 
@@ -101,6 +144,12 @@
         .nav-right {
             display: flex;
             justify-content: flex-end;
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible,
+        select:focus-visible, textarea:focus-visible {
+            outline: 3px solid var(--accent);
+            outline-offset: 3px;
         }
 
         /* Mobile Hamburger */
@@ -155,6 +204,136 @@
             display: flex;
         }
 
+        .mobile-menu a {
+            font-size: 1rem;
+            padding-bottom: 6px;
+        }
+
+        /* Shared CTA button */
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 16px 32px;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        /* Site Footer */
+        .site-footer {
+            border-top: 1px solid var(--text);
+            padding: 50px 4% 24px 4%;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand .logo {
+            display: inline-block;
+            margin-bottom: 14px;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--muted);
+            max-width: 380px;
+        }
+
+        .footer-loc {
+            margin-top: 10px;
+            font-weight: 600;
+        }
+
+        .footer-heading {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 16px;
+        }
+
+        .site-footer ul {
+            list-style: none;
+        }
+
+        .site-footer li {
+            margin-bottom: 10px;
+        }
+
+        .site-footer li a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .site-footer li a:hover {
+            color: var(--accent);
+        }
+
+        .footer-base {
+            max-width: 1200px;
+            margin: 40px auto 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .footer-base p {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        @media (max-width: 900px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                padding: 18px 5%;
+            }
+
+            .nav-center, .nav-right {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .footer-inner {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .site-footer {
+                padding: 40px 5% 24px 5%;
+            }
+
+            .cta-button {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
         /* Page Layout */
         main {
             flex: 1;
@@ -189,7 +368,6 @@
             margin-bottom: 50px;
         }
 
-        /* Content Sections */
         .content-section {
             border-top: 1px solid var(--text);
             padding: 45px 0;
@@ -223,7 +401,7 @@
             margin-top: 16px;
         }
 
-        /* Accordion FAQ Styling */
+        /* Accordion FAQ */
         .faq-section {
             border-top: 1px solid var(--text);
             padding: 45px 0 60px 0;
@@ -247,7 +425,6 @@
             width: 100%;
             background: none;
             border: none;
-            outline: none;
             padding: 24px 0;
             display: flex;
             justify-content: space-between;
@@ -287,7 +464,7 @@
         .accordion-body {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.35s ease-out, padding 0.35s ease;
+            transition: max-height 0.35s ease-out;
             padding: 0;
         }
 
@@ -309,7 +486,7 @@
             gap: 20px;
         }
 
-        .cta-box h3 {
+        .cta-box h2 {
             font-size: 1.4rem;
             font-weight: 800;
             text-transform: uppercase;
@@ -323,39 +500,7 @@
             max-width: 550px;
         }
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent);
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            padding: 16px 32px;
-            transition: transform 0.2s, opacity 0.2s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            opacity: 0.95;
-        }
-
         @media (max-width: 900px) {
-            header {
-                display: flex;
-                justify-content: space-between;
-                padding: 18px 5%;
-            }
-
-            .nav-center, .nav-right {
-                display: none;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-
             main {
                 padding: 40px 5%;
             }
@@ -363,30 +508,27 @@
             .accordion-title {
                 font-size: 1rem;
             }
-
-            .cta-button {
-                width: 100%;
-                text-align: center;
-            }
         }
     </style>
 </head>
 <body>
 
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header>
         <a href="index.html" class="logo">stack<span>digital</span></a>
-        
-        <nav class="nav-center">
+
+        <nav class="nav-center" aria-label="Services">
             <a href="marketing.html" class="active">Paid Ads Management</a>
             <a href="ecommerce.html">Conversion Audits</a>
-            <a href="strategy.html">Dashboards & Analytics</a>
+            <a href="strategy.html">Dashboards &amp; Analytics</a>
         </nav>
-        
-        <nav class="nav-right">
+
+        <nav class="nav-right" aria-label="Contact">
             <a href="contact.html">Contact</a>
         </nav>
 
-        <button class="hamburger" id="hamburger-btn" aria-label="Toggle Navigation Menu">
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
             <span></span>
             <span></span>
             <span></span>
@@ -395,19 +537,18 @@
         <div class="mobile-menu" id="mobile-menu">
             <a href="marketing.html">Paid Ads Management</a>
             <a href="ecommerce.html">Conversion Audits</a>
-            <a href="strategy.html">Dashboards & Analytics</a>
+            <a href="strategy.html">Dashboards &amp; Analytics</a>
             <a href="contact.html">Contact</a>
         </div>
     </header>
 
-    <main>
+    <main id="main">
         <div class="category-tag">Service Area 01</div>
         <h1>Paid Ads Management</h1>
         <p class="lead">
-            Hands-on Google and Meta ad management built specifically for SMEs. Senior media buying focused on real orders, qualified leads, and measurable profit-without the bloated agency retainer.
+            Hands-on Google and Meta ad management built specifically for SMEs. Senior media buying focused on real orders, qualified leads, and measurable profit, without the bloated agency retainer.
         </p>
 
-        <!-- Section 1: The Challenge -->
         <section class="content-section">
             <div class="section-title">The Problem</div>
             <h2 class="section-heading">Tired of paying big agency fees for junior account management?</h2>
@@ -416,12 +557,11 @@
                     Most SMEs end up caught in an agency trap: you get pitched by senior partners, but the moment the contract is signed, your budget gets handed off to a junior account executive juggling 15 other accounts. Campaign builds get set to auto-pilot, changes are reactive, and monthly reports focus on hollow vanity metrics instead of net cash in the bank.
                 </p>
                 <p>
-                    Paid media doesn't need to be overcomplicated or layered with layers of agency overhead. You need clean campaign structure, active weekly optimisation, and an operator who understands your margins and treats your ad spend like their own capital.
+                    Paid media doesn't need to be overcomplicated or buried under agency overhead. You need clean campaign structure, active weekly optimisation, and an operator who understands your margins and treats your ad spend like their own capital.
                 </p>
             </div>
         </section>
 
-        <!-- Section 2: How It Works -->
         <section class="content-section">
             <div class="section-title">The Retainer Model</div>
             <h2 class="section-heading">Senior execution on a predictable monthly retainer</h2>
@@ -430,48 +570,47 @@
                     I manage your paid acquisition directly. Having overseen large-scale ad accounts across major retail and commercial brands, I apply enterprise-grade discipline to SME budgets.
                 </p>
                 <p>
-                    Whether running high-intent Google Search & Shopping campaigns to capture active buyers, or architecting Meta (Facebook & Instagram) ads to drive consistent new customer acquisition, every setup is built with rock-solid conversion tracking. You get weekly monitoring, iterative creative testing, and transparent monthly performance reporting without any waffle.
+                    Whether running high-intent Google Search and Shopping campaigns to capture active buyers, or architecting Meta (Facebook and Instagram) ads to drive consistent new customer acquisition, every setup is built with rock-solid conversion tracking. You get weekly monitoring, iterative creative testing, and transparent monthly performance reporting without any waffle.
                 </p>
             </div>
         </section>
 
-        <!-- Section 3: FAQ Accordion -->
         <section class="faq-section">
             <div class="section-title">Practical Answers</div>
             <h2 class="section-heading">Frequently asked questions from business owners</h2>
 
-            <div class="accordion">
-                
+        <div class="accordion">
+
                 <div class="accordion-item">
-                    <button class="accordion-header">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="marketing-faq-1">
                         <span class="accordion-title">01. How does the monthly retainer work?</span>
-                        <span class="accordion-icon">+</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="accordion-body">
+                    <div class="accordion-body" id="marketing-faq-1">
                         <p>
-                            Simple and predictable. You pay a flat monthly fee that covers full end-to-end management of your ad accounts (Meta and/or Google). This includes regular bid adjustments, search query filtering, audience testing, creative refreshes, and tracking maintenance. Your ad spend is paid directly to the platforms from your own billing profile-there are zero hidden markups or percentages on ad spend.
+                            Simple and predictable. You pay a flat monthly fee that covers full end-to-end management of your ad accounts (Meta and/or Google). This includes regular bid adjustments, search query filtering, audience testing, creative refreshes, and tracking maintenance. Your ad spend is paid directly to the platforms from your own billing profile, so there are zero hidden markups or percentages on ad spend.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-header">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="marketing-faq-2">
                         <span class="accordion-title">02. What ad budget do I need to make this worthwhile?</span>
-                        <span class="accordion-icon">+</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="accordion-body">
+                    <div class="accordion-body" id="marketing-faq-2">
                         <p>
-                            Typically, businesses spending between €1,000 and €5,000 per month on ads see the greatest benefit. At this level, you need expert attention to ensure spend isn't wasted on irrelevant search terms or burnt out audiences, but hiring a full-time in-house specialist isn't financially justifiable yet.
+                            Typically, businesses spending between &euro;1,000 and &euro;5,000 per month on ads see the greatest benefit. At this level, you need expert attention to ensure spend isn't wasted on irrelevant search terms or burnt out audiences, but hiring a full-time in-house specialist isn't financially justifiable yet.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-header">
-                        <span class="accordion-title">03. Google Ads or Meta Ads-which one should we run?</span>
-                        <span class="accordion-icon">+</span>
+                    <button class="accordion-header" aria-expanded="false" aria-controls="marketing-faq-3">
+                        <span class="accordion-title">03. Google Ads or Meta Ads: which one should we run?</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="accordion-body">
+                    <div class="accordion-body" id="marketing-faq-3">
                         <p>
                             It depends on customer intent. If people are already searching for your product or service, Google Search and Shopping are the primary focus because buyer intent is immediate. If you need to generate visual demand or target specific demographics, Meta (Instagram and Facebook) is unmatched. We identify your highest-converting channel first, master it, and then expand.
                         </p>
@@ -479,11 +618,11 @@
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-header">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="marketing-faq-4">
                         <span class="accordion-title">04. Do I need to supply creative and copy, or do you handle that?</span>
-                        <span class="accordion-icon">+</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="accordion-body">
+                    <div class="accordion-body" id="marketing-faq-4">
                         <p>
                             We collaborate practically. You provide raw assets (product photos, video clips, or basic photography from your business), and I craft the commercial hooks, ad copywriting, angles, and formats optimised for the ad networks.
                         </p>
@@ -491,11 +630,11 @@
                 </div>
 
                 <div class="accordion-item">
-                    <button class="accordion-header">
+                    <button class="accordion-header" aria-expanded="false" aria-controls="marketing-faq-5">
                         <span class="accordion-title">05. Am I locked into a long-term contract?</span>
-                        <span class="accordion-icon">+</span>
+                        <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
-                    <div class="accordion-body">
+                    <div class="accordion-body" id="marketing-faq-5">
                         <p>
                             No. Retainers run on a rolling monthly basis with a simple 30-day notice period. I believe in earning client retention through tangible commercial results and responsive communication, not restrictive multi-month lock-ins.
                         </p>
@@ -503,17 +642,54 @@
                 </div>
 
             </div>
+
         </section>
 
-        <!-- Bottom Action CTA -->
         <div class="cta-box">
             <div>
-                <h3>Want an honest audit of your current ad spend?</h3>
-                <p>Book a free consultation. We’ll look at your current campaigns, eliminate wasted spend, and see if a hands-on monthly retainer makes sense for your business.</p>
+                <h2>Want an honest audit of your current ad spend?</h2>
+                <p>Book a free consultation. We'll look at your current campaigns, eliminate wasted spend, and see if a hands-on monthly retainer makes sense for your business.</p>
             </div>
             <a href="contact.html" class="cta-button">Free Consultation</a>
         </div>
     </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-col footer-brand">
+                <a href="index.html" class="logo">stack<span>digital</span></a>
+                <p>Commercial growth consultancy for ambitious Irish SMEs. Paid media, conversion and commercial reporting, run by a senior operator.</p>
+                <p class="footer-loc">Dublin, Ireland</p>
+            </div>
+
+            <div class="footer-col">
+                <h2 class="footer-heading">Services</h2>
+                <ul>
+                    <li><a href="marketing.html">Paid Ads Management</a></li>
+                    <li><a href="ecommerce.html">Conversion Audits</a></li>
+                    <li><a href="strategy.html">Dashboards &amp; Analytics</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h2 class="footer-heading">Get in touch</h2>
+                <ul>
+                    <!-- PLACEHOLDER: swap for your real business email address -->
+                    <li><a href="mailto:hello@stackdigital.ie">hello@stackdigital.ie</a></li>
+                    <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+                    <li><a href="https://www.linkedin.com/in/your-profile/" rel="noopener">LinkedIn</a></li>
+                    <li><a href="contact.html">Enquiry form</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-base">
+            <p>&copy; 2026 Stack Digital. All rights reserved.</p>
+            <!-- Uncomment once the business name is registered with the CRO:
+            <p>Registered business name in Ireland. CRO no. 000000.</p>
+            -->
+        </div>
+    </footer>
 
     <script>
         // Mobile menu toggle
@@ -521,11 +697,12 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         hamburgerBtn.addEventListener('click', () => {
-            hamburgerBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('open');
+            const isOpen = hamburgerBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('open', isOpen);
+            hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
         });
 
-        // Accordion functionality
+        // Accordion
         const accordionItems = document.querySelectorAll('.accordion-item');
 
         accordionItems.forEach(item => {
@@ -535,16 +712,16 @@
             header.addEventListener('click', () => {
                 const isOpen = item.classList.contains('active');
 
-                // Close all other open items
                 accordionItems.forEach(otherItem => {
                     otherItem.classList.remove('active');
                     otherItem.querySelector('.accordion-body').style.maxHeight = null;
+                    otherItem.querySelector('.accordion-header').setAttribute('aria-expanded', 'false');
                 });
 
-                // Toggle selected item
                 if (!isOpen) {
                     item.classList.add('active');
                     body.style.maxHeight = body.scrollHeight + 'px';
+                    header.setAttribute('aria-expanded', 'true');
                 }
             });
         });

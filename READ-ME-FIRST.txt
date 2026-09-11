@@ -100,3 +100,56 @@ STILL OPEN
   "from EUR X" line to ecommerce.html is a one-line edit when you decide.
 - Case study pages, which would be the highest-leverage thing you could add
   next for outbound.
+
+
+PASS 3 CHANGES
+==============
+
+MOBILE MENU
+- The dropdown is now a full-screen overlay with five large, full-width
+  buttons that fill the viewport. Contact is the filled accent button, since
+  it's the primary action.
+- Tap targets are 96px tall on a small phone and 137px on a modern one, well
+  above the 48px accessibility minimum.
+- Page scroll locks while the menu is open, Escape closes it, and it closes
+  itself if the window is widened back to desktop.
+- Desktop navigation is completely unchanged.
+
+IF THE ABOUT LINK STILL ISN'T SHOWING
+- Every page in this zip has three links to about.html: desktop nav, mobile
+  nav, footer. This is checked automatically before packaging.
+- If the live site disagrees, the live site is running older files. Check:
+  1. Hard refresh (Ctrl+Shift+R, or Cmd+Shift+R on Mac). GitHub Pages caches
+     aggressively and a normal refresh often serves the old page.
+  2. GitHub Pages takes 1 to 2 minutes to rebuild after a commit. Check the
+     Actions tab in the repo for a green tick.
+  3. Confirm the files went to the REPO ROOT, not into a subfolder.
+  4. Confirm all 8 HTML files were replaced, not just about.html.
+
+
+PASS 4 CHANGES
+==============
+
+CONSULTANCY CLIENTS SECTION: NOW NAMED CARDS, NOT LOGOS
+- Four clients, each with the engagement named:
+    Renault Ireland            Video production consultancy
+    Dublin City University     Web design
+    Malahide Insurance Shop    Website platform consultancy
+    Paddy's Podcast            Website build, podcast mastering and launch
+- Why not logos: the MIS file supplied is 150x106px, a photograph of signage
+  with a dark glass background, not a logo asset. It cannot sit in a logo wall
+  on a cream background, and the site's multiply blend mode would turn it into
+  a dark smear. Paddy's Podcast has no mark at all. Two clean logos plus two
+  improvised ones reads as amateur.
+- The trade: Renault and DCU logos are no longer on the homepage. What you get
+  back is four clients that read as one consistent set, with the actual work
+  stated. For a consultant the engagement is better proof than the logo.
+- The in-house logo wall below is unchanged, so the page still has logos.
+- If you'd rather have the logo wall back, you need: a clean transparent PNG
+  or SVG of the MIS logo at 500px wide or more (ask the client for their
+  original file), and some kind of mark for Paddy's Podcast.
+
+EDITING THE CLIENT LIST
+- Each entry is a .client-card block in index.html. Copy one, change the two
+  lines, done. The grid is 4 across on desktop and 2 on mobile, so it stays
+  tidy at 4, 6 or 8 clients. At 5 or 7 you'll get a short last row.

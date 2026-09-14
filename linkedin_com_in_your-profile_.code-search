@@ -1,0 +1,44 @@
+# Query: linkedin.com/in/your-profile/
+# ContextLines: 1
+
+8 results - 8 files
+
+404.html:
+  761                      <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+  762:                     <li><a href="https://www.linkedin.com/in/seantackaberry/" rel="noopener">LinkedIn</a></li>
+  763                      <li><a href="contact.html">Enquiry form</a></li>
+
+about.html:
+  966                      <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+  967:                     <li><a href="https://www.linkedin.com/in/seantackaberry/" rel="noopener">LinkedIn</a></li>
+  968                      <li><a href="contact.html">Enquiry form</a></li>
+
+contact.html:
+  893                      <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+  894:                     <li><a href="https://www.linkedin.com/in/seantackaberry/" rel="noopener">LinkedIn</a></li>
+  895                      <li><a href="contact.html">Enquiry form</a></li>
+
+ecommerce.html:
+  1000                      <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+  1001:                     <li><a href="https://www.linkedin.com/in/seantackaberry/" rel="noopener">LinkedIn</a></li>
+  1002                      <li><a href="contact.html">Enquiry form</a></li>
+
+index.html:
+  907                      <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+  908:                     <li><a href="https://www.linkedin.com/in/seantackaberry/" rel="noopener">LinkedIn</a></li>
+  909                      <li><a href="contact.html">Enquiry form</a></li>
+
+marketing.html:
+  1000                      <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+  1001:                     <li><a href="https://www.linkedin.com/in/seantackaberry/" rel="noopener">LinkedIn</a></li>
+  1002                      <li><a href="contact.html">Enquiry form</a></li>
+
+strategy.html:
+  1000                      <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+  1001:                     <li><a href="https://www.linkedin.com/in/seantackaberry/" rel="noopener">LinkedIn</a></li>
+  1002                      <li><a href="contact.html">Enquiry form</a></li>
+
+thanks.html:
+  761                      <!-- PLACEHOLDER: swap for your real LinkedIn profile URL -->
+  762:                     <li><a href="https://www.linkedin.com/in/seantackaberry/" rel="noopener">LinkedIn</a></li>
+  763                      <li><a href="contact.html">Enquiry form</a></li>

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Commerce Conversion Audits | Stack Digital</title>
-    <meta name="description" content="Turn more of your existing store visitors into buyers. A prioritised, plain-English teardown of your funnel, with fixes ranked by commercial impact.">
+    <title>Conversion Audits for Online Stores | Stack Digital</title>
+    <meta name="description" content="A fixed-fee review of your online store that finds where buyers drop out and ranks the fixes by what they&rsquo;re worth. Plain English, no rebuild, no retainer.">
     <link rel="canonical" href="https://stackobell.github.io/ecommerce.html">
     <meta name="theme-color" content="#f4f4f2"><meta name="robots" content="noindex, nofollow">
 
@@ -12,16 +12,16 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Stack Digital">
     <meta property="og:locale" content="en_IE">
-    <meta property="og:title" content="E-Commerce Conversion Audits | Stack Digital">
-    <meta property="og:description" content="Turn more of your existing store visitors into buyers. A prioritised, plain-English teardown of your funnel, with fixes ranked by commercial impact.">
+    <meta property="og:title" content="Conversion Audits for Online Stores | Stack Digital">
+    <meta property="og:description" content="A fixed-fee review of your online store that finds where buyers drop out and ranks the fixes by what they&rsquo;re worth. Plain English, no rebuild, no retainer.">
     <meta property="og:url" content="https://stackobell.github.io/ecommerce.html">
     <meta property="og:image" content="https://stackobell.github.io/images/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="Stack Digital, commercial growth consultancy for ambitious Irish SMEs">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="E-Commerce Conversion Audits | Stack Digital">
-    <meta name="twitter:description" content="Turn more of your existing store visitors into buyers. A prioritised, plain-English teardown of your funnel, with fixes ranked by commercial impact.">
+    <meta name="twitter:title" content="Conversion Audits for Online Stores | Stack Digital">
+    <meta name="twitter:description" content="A fixed-fee review of your online store that finds where buyers drop out and ranks the fixes by what they&rsquo;re worth. Plain English, no rebuild, no retainer.">
     <meta name="twitter:image" content="https://stackobell.github.io/images/og-image.png">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -95,8 +95,8 @@
         .logo span {
             color: var(--muted);
             font-weight: 300;
-             text-transform: uppercase;
-    letter-spacing: 0.02em;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
         }
 
         .nav-center {
@@ -306,6 +306,21 @@
             color: var(--muted);
         }
 
+        /* Six nav items need a little less air between 900px and 1200px */
+        @media (min-width: 901px) and (max-width: 1200px) {
+            .nav-center {
+                gap: 18px;
+            }
+
+            .nav-center a, .nav-right a {
+                font-size: 0.76rem;
+            }
+
+            header {
+                padding: 20px 3%;
+            }
+        }
+
         @media (max-width: 900px) {
             header {
                 display: flex;
@@ -474,7 +489,16 @@
             font-size: 1.02rem;
             line-height: 1.65;
             color: var(--muted);
+            padding-bottom: 14px;
+        }
+
+        .accordion-body p:last-child {
             padding-bottom: 24px;
+        }
+
+        .accordion-body strong {
+            color: var(--text);
+            font-weight: 700;
         }
 
         /* Bottom Action Bar */
@@ -838,7 +862,6 @@
             <a href="ecommerce.html" class="active">Conversion Audits</a>
             <a href="strategy.html">Dashboards &amp; Analytics</a>
             <a href="ai.html">Practical AI</a>
-            <a href="ai.html">Practical AI</a>
             <a href="about.html">About</a>
         </nav>
 
@@ -857,7 +880,6 @@
             <a href="ecommerce.html">Conversion Audits</a>
             <a href="strategy.html">Dashboards &amp; Analytics</a>
             <a href="ai.html">Practical AI</a>
-            <a href="ai.html">Practical AI</a>
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </div>
@@ -867,109 +889,122 @@
         <div class="category-tag">Service Area 02</div>
         <h1>Conversion Audits</h1>
         <p class="lead">
-            Turn more of your existing store visitors into paying buyers. I audit your user journeys, identify hidden drop-off points, and pinpoint the high-impact fixes that lift conversion rates without increasing ad spend.
+            Find out where your online store is losing buyers, and which fixes are worth doing first. A fixed-fee review of your real data and your real checkout, delivered as a ranked list your existing team can work through. No rebuild, no retainer.
         </p>
 
         <section class="content-section">
-            <div class="section-title">The Bottleneck</div>
-            <h2 class="section-heading">More traffic won't fix an inefficient checkout</h2>
+            <div class="section-title">The Problem</div>
+            <h2 class="section-heading">More traffic won&rsquo;t fix a leaky store</h2>
             <div class="body-text">
                 <p>
-                    When sales stall, the knee-jerk reaction for most businesses is to throw more money into paid ads. But driving traffic to an online storefront with friction in the checkout process simply burns your marketing budget.
+                    When online sales flatten, the reflex is to spend more on ads. But if people are dropping out between the product page and the payment screen, more traffic just means paying to lose more of them. The ad bill goes up, the conversion rate stays where it was, and every sale costs a little more than the last.
                 </p>
                 <p>
-                    Roughly 70% of shoppers who add an item to their cart never complete the purchase, and a large share of that loss happens between the cart and the payment page. Subtle issues kill transactions before they happen: confusing navigation, slow mobile page loads, limited payment options, or delivery costs that only appear at the last step. Eliminating these barriers is the single fastest way to increase revenue and protect your gross profit.
+                    The causes are rarely dramatic. Delivery costs that only appear at the final step. A product page that crawls on a phone. A discount code box that sends people off to Google to hunt for a code. A checkout that wants an account before it wants a card. Each one costs a few percent, and nobody inside the business notices because they stopped using the site like a customer a long time ago.
                 </p>
             </div>
         </section>
 
         <section class="content-section">
-            <div class="section-title">Practical Delivery</div>
-            <h2 class="section-heading">Tangible, prioritised improvements. No massive rebuilds required.</h2>
+            <div class="section-title">How It Works</div>
+            <h2 class="section-heading">A ranked list of fixes, not a redesign</h2>
             <div class="body-text">
                 <p>
-                    You don&rsquo;t need an expensive six-month site overhaul to see significant uplifts. Most commercial gains come from targeted, high-leverage adjustments to key funnel steps.
+                    I start with your analytics and store data to see where people actually leave: which devices, which pages, which step of the checkout. Then I go through the site the way a customer would, on a phone and on a laptop, right up to placing a test order. If you run automated emails for abandoned carts or new customers, I review those too.
                 </p>
                 <p>
-                    I review your actual analytics data, session recordings, and checkout flows to identify exactly where your visitors are hesitating or abandoning. You receive a clear, plain-English roadmap of fixes: mobile layout optimisations, frictionless checkout setups, targeted cart-level upsells, and automated abandoned cart recovery sequences that recover lost margin right away.
+                    You get a short document listing every issue I&rsquo;ve found, ranked by what it&rsquo;s likely worth against how hard it is to fix, followed by a walkthrough call so you can ask questions and decide what to tackle first. Most of it can be done on your current platform by you or whoever already looks after the site. It&rsquo;s a fixed fee agreed before we start, and there&rsquo;s nothing ongoing unless you ask for it.
                 </p>
             </div>
         </section>
 
         <section class="faq-section">
             <div class="section-title">Practical Answers</div>
-            <h2 class="section-heading">Common questions about store audits</h2>
+            <h2 class="section-heading">Frequently asked questions from business owners</h2>
 
-        <div class="accordion">
-
+            <div class="accordion">
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="ecommerce-faq-1">
-                        <span class="accordion-title">01. What does a conversion audit actually look at?</span>
+                        <span class="accordion-title">01. What do you need from me?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="ecommerce-faq-1">
                         <p>
-                            The entire path to purchase: page load speed, mobile navigation responsiveness, product page layout, trust signals, delivery messaging, cart friction, and checkout completion rates. I identify every point where prospective buyers drop off and provide concrete recommendations to fix them.
+                            Read-only access to your analytics (usually Google Analytics 4), your store admin, and your email platform if you run automated emails. Read-only means I can see what&rsquo;s happening but can&rsquo;t change anything.
+                        </p>
+                        <p>
+                            Plus a short call at the start to tell me what you sell, who buys it and what you&rsquo;ve already tried. That saves us both from me recommending something you ruled out last year.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="ecommerce-faq-2">
-                        <span class="accordion-title">02. Do I need to switch platforms or hire a new developer?</span>
+                        <span class="accordion-title">02. Do I need to change platform or hire a developer?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="ecommerce-faq-2">
                         <p>
-                            Rarely. Most conversion wins can be implemented directly within your existing Shopify, WooCommerce, or current platform theme settings. The audit produces an actionable punch list that you or your existing web team can execute immediately without complex custom coding.
+                            Rarely. Most fixes are settings, wording, layout or app changes inside Shopify, WooCommerce or whatever you&rsquo;re on now.
+                        </p>
+                        <p>
+                            Every item on the list says whether it&rsquo;s a ten-minute job for you or something for a developer, so you can see the split before committing to anything. Where something does need a developer, I&rsquo;ll say so plainly and roughly what it involves.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="ecommerce-faq-3">
-                        <span class="accordion-title">03. What kind of uplift can we realistically expect?</span>
+                        <span class="accordion-title">03. What kind of uplift can I expect?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="ecommerce-faq-3">
                         <p>
-                            Lifting an overall store conversion rate from 1.5% to 2.0% represents a 33% increase in top-line revenue from the exact same visitor traffic. Combined with simple average order value (AOV) improvements like post-purchase upsells and threshold delivery prompts, the commercial return is substantial and immediate.
+                            I won&rsquo;t put a number on it before I&rsquo;ve seen your data, and I&rsquo;d be wary of anyone who does.
+                        </p>
+                        <p>
+                            What I can show you is how the maths works. A store converting 1.5% of its visitors that gets to 2% has taken a third more orders without a single extra visitor. Small gains in conversion rate are worth far more than they sound, because they apply to every euro you already spend getting people to the site.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="ecommerce-faq-4">
-                        <span class="accordion-title">04. Does this cover automated email and retention flows?</span>
+                        <span class="accordion-title">04. What if my tracking is wrong?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="ecommerce-faq-4">
                         <p>
-                            Yes. On-site conversion is only half the battle; capturing abandoned carts and re-engaging past customers is just as critical. I audit your abandoned cart, welcome series, and post-purchase email workflows (such as Klaviyo) to make sure you are automatically converting hesitant buyers.
+                            It often is, and that&rsquo;s worth knowing on its own. If purchases are being counted twice, or the checkout isn&rsquo;t tracked at all, you&rsquo;re making spending decisions on bad numbers.
+                        </p>
+                        <p>
+                            I&rsquo;ll flag it in the audit, and fixing it is usually the first item on the list. If it needs more than a quick repair, that&rsquo;s what the <a href="strategy.html">Dashboards &amp; Analytics</a> work is for.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="ecommerce-faq-5">
-                        <span class="accordion-title">05. How is this delivered?</span>
+                        <span class="accordion-title">05. Why you rather than an agency or a CRO specialist?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="ecommerce-faq-5">
                         <p>
-                            You receive a concise, prioritised teardown document detailing the highest-impact fixes ranked by ease of implementation and commercial impact, followed by a 45-minute walkthrough call to answer any questions and guide your execution.
+                            Because I&rsquo;ve run the online side of a retail business myself: the trading, the promotions, the checkout complaints and the Monday morning sales figures. I&rsquo;ve sat where you are, looking at a conversion rate and wondering which of fifty things to fix first.
+                        </p>
+                        <p>
+                            So the audit is written for the person who has to act on it. No forty-page deck, no heatmap screenshots for the sake of it, and nothing recommended because it&rsquo;s fashionable. Just the fixes that matter for your store, in the order I&rsquo;d do them.
                         </p>
                     </div>
                 </div>
 
             </div>
-
         </section>
 
         <div class="cta-box">
             <div>
-                <h2>Ready to stop losing sales at checkout?</h2>
-                <p>Book a consultation. We'll take a look at your current storefront metrics and highlight immediate opportunities to lift conversion.</p>
+                <h2>Not sure where your store is losing people?</h2>
+                <p>Send me the link and roughly what you sell. I&rsquo;ll take a look and tell you whether a full audit is worth your money, or whether there&rsquo;s one obvious fix you can make yourself this week.</p>
             </div>
             <div class="cta-actions">
             <a href="contact.html" class="cta-button">Request a conversion audit</a>

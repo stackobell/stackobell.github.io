@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Stack Digital</title>
-    <meta name="description" content="Tell me about your business and what isn't working. I reply to every enquiry within one working day.">
+    <title>Contact | St&aacute;ck Digital</title>
+    <meta name="description" content="Tell me about your business and what isn&rsquo;t working, and we&rsquo;ll set up a free, no-obligation call.">
     <link rel="canonical" href="https://stackobell.github.io/contact.html">
     <meta name="theme-color" content="#f4f4f2"><meta name="robots" content="noindex, nofollow">
 
     <!-- Link preview cards for LinkedIn, WhatsApp, Slack, iMessage and email -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Stack Digital">
+    <meta property="og:site_name" content="St&aacute;ck Digital">
     <meta property="og:locale" content="en_IE">
-    <meta property="og:title" content="Contact | Stack Digital">
-    <meta property="og:description" content="Tell me about your business and what isn't working. I reply to every enquiry within one working day.">
+    <meta property="og:title" content="Contact | St&aacute;ck Digital">
+    <meta property="og:description" content="Tell me about your business and what isn&rsquo;t working, and we&rsquo;ll set up a free, no-obligation call.">
     <meta property="og:url" content="https://stackobell.github.io/contact.html">
     <meta property="og:image" content="https://stackobell.github.io/images/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Stack Digital, commercial growth consultancy for ambitious Irish SMEs">
+    <meta property="og:image:alt" content="St&aacute;ck Digital, commercial growth consultancy for ambitious Irish SMEs">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Contact | Stack Digital">
-    <meta name="twitter:description" content="Tell me about your business and what isn't working. I reply to every enquiry within one working day.">
+    <meta name="twitter:title" content="Contact | St&aacute;ck Digital">
+    <meta name="twitter:description" content="Tell me about your business and what isn&rsquo;t working, and we&rsquo;ll set up a free, no-obligation call.">
     <meta name="twitter:image" content="https://stackobell.github.io/images/og-image.png">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -304,6 +304,32 @@
         .footer-base p {
             font-size: 0.8rem;
             color: var(--muted);
+        }
+
+        /* Six nav items need a little less air between 900px and 1200px */
+        @media (min-width: 901px) and (max-width: 1200px) {
+            .nav-center {
+                gap: 14px;
+            }
+
+            .nav-center a, .nav-right a {
+                font-size: 0.72rem;
+                white-space: nowrap;
+            }
+
+            header {
+                padding: 20px 3%;
+            }
+        }
+
+        @media (min-width: 901px) and (max-width: 1000px) {
+            .nav-center {
+                gap: 10px;
+            }
+
+            header {
+                padding: 20px 2%;
+            }
         }
 
         @media (max-width: 900px) {
@@ -779,7 +805,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header>
-        <a href="index.html" class="logo">stack<span>digital</span></a>
+        <a href="index.html" class="logo">st&aacute;ck<span>digital</span></a>
 
         <nav class="nav-center" aria-label="Services">
             <a href="marketing.html">Paid Ads Management</a>
@@ -811,15 +837,15 @@
 
     <main id="main">
         <h1>Let's Talk</h1>
-        <p class="page-intro">Fill out the details below to arrange a free consultation.</p>
+        <p class="page-intro">Tell me a bit about your business and what isn&rsquo;t working, and we&rsquo;ll set up a free, no-obligation call.</p>
         <p class="qualifier">
-            I work best with SMEs spending roughly &euro;1,000 to &euro;5,000 a month on ads, or running an e-commerce store that needs a senior pair of eyes. If that isn't you yet, still get in touch and I'll point you in the right direction.
+            I work best with Irish SMEs that have outgrown doing their own marketing but don&rsquo;t need a full-time hire. If you&rsquo;re not sure I&rsquo;m the right fit, get in touch anyway. If I&rsquo;m not, I&rsquo;ll say so and point you to someone who is.
         </p>
 
         <form action="https://formspree.io/f/xaeyjvyv" method="POST">
             <!-- Sends the visitor to your own thank-you page instead of Formspree's -->
             <input type="hidden" name="_next" value="https://stackobell.github.io/thanks.html">
-            <input type="hidden" name="_subject" value="New enquiry from stackdigital.ie">
+            <input type="hidden" name="_subject" value="New enquiry from the St&aacute;ck Digital site">
             <!-- Honeypot: hidden from people, filled in by bots, so the spam is dropped -->
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none">
 
@@ -845,10 +871,22 @@
                 </div>
             </div>
 
+            <div class="form-group">
+                <label for="service">What can I help with?</label>
+                <select id="service" name="service" required>
+                    <option value="">Please select</option>
+                    <option>Paid ads management</option>
+                    <option>A conversion audit</option>
+                    <option>A dashboard or reporting</option>
+                    <option>Practical AI</option>
+                    <option>Not sure yet</option>
+                </select>
+            </div>
+
             <!-- Qualifying field. Delete this whole .form-group block if you'd rather not ask. -->
             <div class="form-group">
-                <label for="spend">Current monthly ad spend</label>
-                <select id="spend" name="spend" required>
+                <label for="spend">Current monthly ad spend (optional)</label>
+                <select id="spend" name="spend">
                     <option value="">Please select</option>
                     <option>Under &euro;1,000</option>
                     <option>&euro;1,000 to &euro;5,000</option>
@@ -860,11 +898,11 @@
             </div>
 
             <div class="form-group">
-                <label for="intro">Brief Intro</label>
-                <textarea id="intro" name="intro" required placeholder="Tell me a bit about your business, current bottlenecks, or goals..."></textarea>
+                <label for="intro">What&rsquo;s going on?</label>
+                <textarea id="intro" name="intro" required placeholder="What you sell, what you&rsquo;ve tried, and what you&rsquo;d like to be different in six months."></textarea>
             </div>
 
-            <button type="submit" class="submit-btn">Submit</button>
+            <button type="submit" class="submit-btn">Send enquiry</button>
             <p class="form-note">I read every enquiry personally and reply within one working day.</p>
         </form>
     </main>
@@ -872,7 +910,7 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-col footer-brand">
-                <a href="index.html" class="logo">stack<span>digital</span></a>
+                <a href="index.html" class="logo">st&aacute;ck<span>digital</span></a>
                 <p>Commercial growth consultancy for ambitious Irish SMEs. Paid media, conversion and commercial reporting, run by a senior operator.</p>
                 <p class="footer-loc">Dublin, Ireland</p>
             </div>
@@ -900,7 +938,7 @@
         </div>
 
         <div class="footer-base">
-            <p>&copy; 2026 Stack Digital. All rights reserved.</p>
+            <p>&copy; 2026 St&aacute;ck Digital. All rights reserved.</p>
             <!-- Uncomment once the business name is registered with the CRO:
             <p>Registered business name in Ireland. CRO no. 000000.</p>
             -->

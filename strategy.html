@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing Dashboards &amp; Analytics | Stack Digital</title>
-    <meta name="description" content="One live dashboard for blended ad spend, net revenue, acquisition cost and margin, paired with a monthly commercial review. Built in Looker Studio.">
+    <title>Marketing Dashboards for SMEs | St&aacute;ck Digital</title>
+    <meta name="description" content="One dashboard showing whether your marketing makes money: spend, sales and cost per customer in one place. Fixed-fee build, optional monthly review.">
     <link rel="canonical" href="https://stackobell.github.io/strategy.html">
     <meta name="theme-color" content="#f4f4f2"><meta name="robots" content="noindex, nofollow">
 
     <!-- Link preview cards for LinkedIn, WhatsApp, Slack, iMessage and email -->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Stack Digital">
+    <meta property="og:site_name" content="St&aacute;ck Digital">
     <meta property="og:locale" content="en_IE">
-    <meta property="og:title" content="Marketing Dashboards &amp; Analytics | Stack Digital">
-    <meta property="og:description" content="One live dashboard for blended ad spend, net revenue, acquisition cost and margin, paired with a monthly commercial review. Built in Looker Studio.">
+    <meta property="og:title" content="Marketing Dashboards for SMEs | St&aacute;ck Digital">
+    <meta property="og:description" content="One dashboard showing whether your marketing makes money: spend, sales and cost per customer in one place. Fixed-fee build, optional monthly review.">
     <meta property="og:url" content="https://stackobell.github.io/strategy.html">
     <meta property="og:image" content="https://stackobell.github.io/images/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Stack Digital, commercial growth consultancy for ambitious Irish SMEs">
+    <meta property="og:image:alt" content="St&aacute;ck Digital, commercial growth consultancy for ambitious Irish SMEs">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Marketing Dashboards &amp; Analytics | Stack Digital">
-    <meta name="twitter:description" content="One live dashboard for blended ad spend, net revenue, acquisition cost and margin, paired with a monthly commercial review. Built in Looker Studio.">
+    <meta name="twitter:title" content="Marketing Dashboards for SMEs | St&aacute;ck Digital">
+    <meta name="twitter:description" content="One dashboard showing whether your marketing makes money: spend, sales and cost per customer in one place. Fixed-fee build, optional monthly review.">
     <meta name="twitter:image" content="https://stackobell.github.io/images/og-image.png">
 
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -95,8 +95,8 @@
         .logo span {
             color: var(--muted);
             font-weight: 300;
-             text-transform: uppercase;
-    letter-spacing: 0.02em;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
         }
 
         .nav-center {
@@ -306,6 +306,32 @@
             color: var(--muted);
         }
 
+        /* Six nav items need a little less air between 900px and 1200px */
+        @media (min-width: 901px) and (max-width: 1200px) {
+            .nav-center {
+                gap: 14px;
+            }
+
+            .nav-center a, .nav-right a {
+                font-size: 0.72rem;
+                white-space: nowrap;
+            }
+
+            header {
+                padding: 20px 3%;
+            }
+        }
+
+        @media (min-width: 901px) and (max-width: 1000px) {
+            .nav-center {
+                gap: 10px;
+            }
+
+            header {
+                padding: 20px 2%;
+            }
+        }
+
         @media (max-width: 900px) {
             header {
                 display: flex;
@@ -474,7 +500,16 @@
             font-size: 1.02rem;
             line-height: 1.65;
             color: var(--muted);
+            padding-bottom: 14px;
+        }
+
+        .accordion-body p:last-child {
             padding-bottom: 24px;
+        }
+
+        .accordion-body strong {
+            color: var(--text);
+            font-weight: 700;
         }
 
         /* Bottom Action Bar */
@@ -831,7 +866,7 @@
     <a class="skip-link" href="#main">Skip to content</a>
 
     <header>
-        <a href="index.html" class="logo">stack<span>digital</span></a>
+        <a href="index.html" class="logo">st&aacute;ck<span>digital</span></a>
 
         <nav class="nav-center" aria-label="Services">
             <a href="marketing.html">Paid Ads Management</a>
@@ -865,112 +900,125 @@
         <div class="category-tag">Service Area 03</div>
         <h1>Dashboards &amp; Analytics</h1>
         <p class="lead">
-            Turn fragmented metrics into commercial clarity. I build automated, single-view dashboards and deliver monthly commercial reviews so you always know where your revenue is coming from and what to do next.
+            One page that shows whether your marketing is making money. Ad spend, sales and cost per customer from every platform in one place, updated automatically, so you can stop logging into four dashboards that all disagree with each other.
         </p>
 
         <section class="content-section">
-            <div class="section-title">The Friction</div>
-            <h2 class="section-heading">Drowning in data, but starved of commercial insights</h2>
+            <div class="section-title">The Problem</div>
+            <h2 class="section-heading">Four platforms, four different answers</h2>
             <div class="body-text">
                 <p>
-                    Most business owners don&rsquo;t have the time to log into four separate platforms every morning. Google Analytics 4 is needlessly confusing, Meta Ads shows one set of revenue figures, Google Ads claims another, and Shopify tells a completely different story.
+                    Meta says your ads drove most of last month&rsquo;s sales. Google says the same. Add the two together and your ads apparently brought in more than the whole business took. They can&rsquo;t both be right, and they aren&rsquo;t: each platform takes credit for every sale it had a hand in, so the same order gets claimed twice.
                 </p>
                 <p>
-                    When your numbers are scattered across different screens, making quick commercial decisions becomes guesswork. You don&rsquo;t need 50-page PDF reports that arrive two weeks after the month has ended. You need one clean, real-time dashboard that tracks your true commercial health: blended ad spend, net revenue, acquisition costs, and margin.
+                    Meanwhile the questions that actually matter go unanswered. What does it really cost to win a new customer? Which channel is paying for itself? Is the extra spend this quarter bringing in new people, or just the ones who would have bought anyway? Getting those answers shouldn&rsquo;t cost you a Sunday afternoon with a spreadsheet.
                 </p>
             </div>
         </section>
 
         <section class="content-section">
-            <div class="section-title">The Retainer Model</div>
-            <h2 class="section-heading">A custom live dashboard paired with regular commercial recommendations</h2>
+            <div class="section-title">How It Works</div>
+            <h2 class="section-heading">Built once, then it runs itself</h2>
             <div class="body-text">
                 <p>
-                    I build you a bespoke Looker Studio dashboard tailored to your exact business metrics, pulling live data directly from GA4, Google Ads, Meta Ads, and your e-commerce store into one clean, accessible view.
+                    I start by checking your tracking, because a dashboard built on bad data is worse than no dashboard. Then I build one report in Looker Studio that pulls together your store, Google Analytics, Google Ads and Meta, and shows the handful of numbers that matter to your business: total spend against total revenue, what a new customer really costs, and which way both are heading. It lives on your Google account, it&rsquo;s yours to keep, and it updates itself.
                 </p>
                 <p>
-                    More importantly, the dashboard is paired with ongoing commercial advisory. Every month, I review the numbers, identify trends, flag underperforming campaigns or product lines, and provide clear, actionable recommendations. You get senior commercial direction on what to scale, what to cut, and where to focus your marketing budget next.
+                    The build is a fixed fee, agreed before we start. If you&rsquo;d like someone to read the numbers with you, there&rsquo;s an optional monthly review: a short written summary of what&rsquo;s changed and a call about what to do next. It runs month to month, and you can stop whenever the dashboard is doing the job on its own.
                 </p>
             </div>
         </section>
 
         <section class="faq-section">
             <div class="section-title">Practical Answers</div>
-            <h2 class="section-heading">Frequently asked questions about analytics and reporting</h2>
+            <h2 class="section-heading">Frequently asked questions from business owners</h2>
 
-        <div class="accordion">
-
+            <div class="accordion">
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="strategy-faq-1">
-                        <span class="accordion-title">01. What tools do you use to build the dashboards?</span>
+                        <span class="accordion-title">01. What tools do you use, and what will they cost me?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="strategy-faq-1">
                         <p>
-                            Google Looker Studio, connected to Google Analytics 4 (GA4), Google Tag Manager, Google Ads, and the Meta Ads API. This setup is fast, completely cloud-based, and eliminates expensive recurring software subscription fees. You get a private, secure URL that updates automatically in real time.
+                            Looker Studio, Google&rsquo;s free reporting tool, connected to Google Analytics 4 and Google Ads. Those connections are free too.
+                        </p>
+                        <p>
+                            Meta, and some store platforms, need a paid connector to get their data into Looker Studio, usually a modest monthly subscription. I&rsquo;ll tell you up front whether you need one and what it costs, and I take no commission on it.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="strategy-faq-2">
-                        <span class="accordion-title">02. Can you connect our physical store sales or offline data?</span>
+                        <span class="accordion-title">02. Is it live?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="strategy-faq-2">
                         <p>
-                            Yes. By integrating point-of-sale exports or Google Sheets connectors, I can display your total commercial picture, combining online orders and bricks-and-mortar retail revenue into a single executive dashboard.
+                            Close enough. Most sources refresh every few hours, which is plenty for decisions that get made weekly rather than minute by minute.
+                        </p>
+                        <p>
+                            What it replaces is the report someone builds by hand at the end of the month, by which point it&rsquo;s too late to do anything about it.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="strategy-faq-3">
-                        <span class="accordion-title">03. What does the ongoing monthly review include?</span>
+                        <span class="accordion-title">03. Can it include sales from our shops?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="strategy-faq-3">
                         <p>
-                            Instead of sending automated reports you&rsquo;ll never read, I deliver a concise monthly summary highlighting key performance shifts, true blended CAC, and customer retention metrics, alongside a dedicated 30 to 45 minute commercial recommendations call to guide your next moves.
+                            Yes. If you have physical shops, till data can usually come in through a regular export or a Google Sheet, so online and in-store sales sit side by side.
+                        </p>
+                        <p>
+                            That matters more than people expect. Some of the ads that look like they&rsquo;re failing online are quietly sending people into the shop, and you&rsquo;d never know from the ad platforms alone.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="strategy-faq-4">
-                        <span class="accordion-title">04. What if our tracking or GA4 is currently broken or inaccurate?</span>
+                        <span class="accordion-title">04. What does the monthly review include?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="strategy-faq-4">
                         <p>
-                            Before building any dashboard, I audit your tracking infrastructure. That means checking your Google Tag Manager triggers, purchase event parameters, and ad platform pixels to make sure the data feeding into your dashboard is accurate, clean, and deduplicated.
+                            A one-page summary of what moved and why, and a short call about what to change: where to put more budget, what to cut, and anything in the numbers that needs a closer look.
+                        </p>
+                        <p>
+                            No fifty-page report, and nothing sent automatically that nobody reads.
                         </p>
                     </div>
                 </div>
 
                 <div class="accordion-item">
                     <button class="accordion-header" aria-expanded="false" aria-controls="strategy-faq-5">
-                        <span class="accordion-title">05. Can this be combined with your Paid Ads Management service?</span>
+                        <span class="accordion-title">05. Do I need your Paid Ads service as well?</span>
                         <span class="accordion-icon" aria-hidden="true">+</span>
                     </button>
                     <div class="accordion-body" id="strategy-faq-5">
                         <p>
-                            Absolutely. Most clients bundle Paid Ads Management with Dashboards and Analytics into a single, comprehensive monthly retainer. That way, campaign execution and commercial reporting are completely unified under one senior operator.
+                            No. The dashboard works whoever runs your ads, whether that&rsquo;s you, an agency or someone in-house.
+                        </p>
+                        <p>
+                            It&rsquo;s arguably most useful when someone else is running them, because it gives you an independent view of what you&rsquo;re getting for the money. And if I&rsquo;m running your ads too, it&rsquo;s where you&rsquo;d check my work.
                         </p>
                     </div>
                 </div>
 
             </div>
-
         </section>
 
         <div class="cta-box">
             <div>
-                <h2>Get clarity on your commercial numbers</h2>
-                <p>Book a consultation. We'll look at your current data setup, untangle your tracking, and show you what a clean commercial dashboard looks like.</p>
+                <h2>Not sure your numbers add up?</h2>
+                <p>Tell me which platforms you use and what you&rsquo;d most like to know each week. I&rsquo;ll tell you whether a dashboard would answer it, or whether the fix is simpler than that.</p>
             </div>
             <div class="cta-actions">
-            <a href="contact.html" class="cta-button">Book a data review</a>
+            <a href="contact.html" class="cta-button">Ask about a dashboard</a>
             <p class="cta-alt">Prefer email? <a href="mailto:hello@stackdigital.ie">hello@stackdigital.ie</a></p>
             </div>
         </div>
@@ -979,7 +1027,7 @@
     <footer class="site-footer">
         <div class="footer-inner">
             <div class="footer-col footer-brand">
-                <a href="index.html" class="logo">stack<span>digital</span></a>
+                <a href="index.html" class="logo">st&aacute;ck<span>digital</span></a>
                 <p>Commercial growth consultancy for ambitious Irish SMEs. Paid media, conversion and commercial reporting, run by a senior operator.</p>
                 <p class="footer-loc">Dublin, Ireland</p>
             </div>
@@ -1007,7 +1055,7 @@
         </div>
 
         <div class="footer-base">
-            <p>&copy; 2026 Stack Digital. All rights reserved.</p>
+            <p>&copy; 2026 St&aacute;ck Digital. All rights reserved.</p>
             <!-- Uncomment once the business name is registered with the CRO:
             <p>Registered business name in Ireland. CRO no. 000000.</p>
             -->
